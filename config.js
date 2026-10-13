@@ -2,6 +2,6 @@
    APP_URL = where the app runs (sign in, sign up, FAQ, legal pages).
    API_URL = same server; leave equal to APP_URL unless you split them. */
 window.LANDING_CONFIG = {
-  APP_URL: "https://politrade-ai.fly.dev",
-  API_URL: "https://politrade-ai.fly.dev"
+  APP_URL: "https://hillradar-ai.fly.dev",
+  API_URL: "https://hillradar-ai.fly.dev"
 };
