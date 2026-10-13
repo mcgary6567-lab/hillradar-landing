@@ -245,3 +245,5 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
   body.has-sticky { padding-bottom: 64px; }
   .cookie { bottom: 72px; }
 }
+.cookie button { background: transparent; color: var(--ink); cursor: pointer; font: inherit; }
+.cookie button:hover { border-color: var(--gold); color: var(--gold); }
