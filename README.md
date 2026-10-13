@@ -1,6 +1,6 @@
 # Landing page (static)
 
-Marketing / Google Ads landing page for the Congress trade tracker. Plain HTML, CSS and JS. No build step.
+Hillradar marketing / Google Ads landing page. Plain HTML, CSS and JS. No build step.
 
 ## Files
 - `index.html` – the page

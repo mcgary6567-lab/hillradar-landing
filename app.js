@@ -40,6 +40,8 @@
   function renderBrand(d) {
     if (!d.brand) return;
     var short = d.brand.replace(/\s*AI$/i, "");
+    var b1 = $(".brand .b1"), bb = $(".brand b");
+    if (b1 && bb && short.length > 6) { b1.textContent = short.slice(0, 4); bb.textContent = short.slice(4); }
     setAll("data-brand", null, d.brand);
     setAll("data-brand-short", null, short);
     setAll("data-company", null, d.company || d.brand);
