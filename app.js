@@ -122,10 +122,31 @@
     };
     window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
   }
-  // cookie notice (once per browser)
+  // ---- Google tag (GA4 + Google Ads) with Consent Mode v2: denied by default, granted on cookie OK ----
+  var TAG_IDS = [CFG.GA4_ID, CFG.GOOGLE_ADS_ID].filter(Boolean);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  var consented = false; try { consented = localStorage.getItem("hr_cookie_ok") === "1"; } catch (e) {}
+  if (TAG_IDS.length) {
+    gtag("consent", "default", { ad_storage: consented ? "granted" : "denied", ad_user_data: consented ? "granted" : "denied", ad_personalization: consented ? "granted" : "denied", analytics_storage: consented ? "granted" : "denied", wait_for_update: 500 });
+    var gs = document.createElement("script"); gs.async = true; gs.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(TAG_IDS[0]); document.head.appendChild(gs);
+    gtag("js", new Date());
+    TAG_IDS.forEach(function (id) { gtag("config", id, { anonymize_ip: true }); });
+    // sign-up click = the conversion we can see on this domain (the account itself is created on the app domain)
+    $$('a[href*="/signup"]').forEach(function (a) {
+      a.addEventListener("click", function () {
+        gtag("event", "sign_up_click", { event_category: "conversion", page: location.pathname });
+        if (CFG.GOOGLE_ADS_ID && CFG.GOOGLE_ADS_SIGNUP_LABEL) gtag("event", "conversion", { send_to: CFG.GOOGLE_ADS_ID + "/" + CFG.GOOGLE_ADS_SIGNUP_LABEL });
+      });
+    });
+  }
+  // cookie notice (once per browser); OK grants consent for the tags above
   var ck = $("#cookie");
-  if (ck) { var seen = false; try { seen = localStorage.getItem("hr_cookie_ok") === "1"; } catch (e) {}
-    if (!seen) { ck.hidden = false; $("#cookie-ok").addEventListener("click", function () { ck.hidden = true; try { localStorage.setItem("hr_cookie_ok", "1"); } catch (e) {} }); } }
+  if (ck) {
+    if (!consented) { ck.hidden = false; $("#cookie-ok").addEventListener("click", function () { ck.hidden = true; try { localStorage.setItem("hr_cookie_ok", "1"); } catch (e) {}
+      if (TAG_IDS.length) gtag("consent", "update", { ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "granted" }); }); }
+  }
 
   // footer year
   setAll("data-year", null, String(new Date().getFullYear()));
