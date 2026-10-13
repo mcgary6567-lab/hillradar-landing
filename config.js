@@ -6,5 +6,5 @@ window.LANDING_CONFIG = {
   API_URL: "https://hillradar-ai.fly.dev",
   // social profiles shown in the footer (leave "" to hide one)
   SOCIAL_X: "https://x.com/hillradarai",
-  SOCIAL_LINKEDIN: "https://www.linkedin.com/company/hillradar"
+  SOCIAL_LINKEDIN: "https://www.linkedin.com/company/hillradarai"
 };

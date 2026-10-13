@@ -39,7 +39,7 @@ const footer = () => `<footer class="site-footer">
     <a class="brand fb" href="/"><img src="/assets/logo.svg" width="40" height="40" alt="${BRAND} logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
     <div class="social" aria-label="Follow ${BRAND}">
       <a data-social="x" href="https://x.com/hillradarai" target="_blank" rel="noopener me" aria-label="${BRAND} on X (Twitter)" title="X / Twitter"><svg class="i" viewBox="0 0 24 24"><use href="#i-x-logo"/></svg></a>
-      <a data-social="linkedin" href="https://www.linkedin.com/company/hillradar" target="_blank" rel="noopener me" aria-label="${BRAND} on LinkedIn" title="LinkedIn"><svg class="i" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></a>
+      <a data-social="linkedin" href="https://www.linkedin.com/company/hillradarai" target="_blank" rel="noopener me" aria-label="${BRAND} on LinkedIn" title="LinkedIn"><svg class="i" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></a>
     </div>
     <span>© <span data-year>${today.slice(0, 4)}</span> <span data-company>${BRAND}</span></span>
     <nav>
