@@ -28,7 +28,6 @@ const header = (active) => `<header class="site-header">
       <a class="hide" href="/#features">Features</a>
       <a class="hide" href="/#data">Data</a>
       <a class="hide" href="/#pricing">Pricing</a>
-      <a class="hide${active === "blog" ? " on" : ""}" href="/blog/">Blog</a>
       <a href="/login">Sign in</a>
       <a class="btn gold sm" href="/signup"><span class="l">Create free account</span><span class="s">Get started</span></a>
     </nav>
