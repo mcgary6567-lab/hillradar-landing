@@ -239,8 +239,8 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 .cookie[hidden] { display: none; }
 .cookie .btn { padding: 8px 14px; }
 @media (max-width: 700px) {
-  .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,15,28,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--line); font-size: .85rem; color: var(--mute); transform: translateY(110%); transition: transform .25s; }
-  .sticky-cta.show { transform: none; }
+  .sticky-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,15,28,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--line); font-size: .85rem; color: var(--mute); transform: translateY(110%); transition: transform .25s; }
+  .sticky-cta.show { display: flex; transform: none; }
   .sticky-cta .btn { white-space: nowrap; }
   body.has-sticky { padding-bottom: 64px; }
   .cookie { bottom: 72px; }

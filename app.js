@@ -117,7 +117,7 @@
     var onScroll = function () {
       var heroGone = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 500;
       var finVisible = fin ? fin.getBoundingClientRect().top < window.innerHeight : false;
-      var show = heroGone && !finVisible;
+      var show = heroGone && !finVisible && window.matchMedia("(max-width: 700px)").matches;
       if (show !== lastShow) { sticky.classList.toggle("show", show); sticky.setAttribute("aria-hidden", show ? "false" : "true"); lastShow = show; }
     };
     window.addEventListener("scroll", onScroll, { passive: true }); onScroll();

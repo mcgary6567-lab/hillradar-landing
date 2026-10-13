@@ -51,8 +51,8 @@ const footer = () => `<div class="cookie" id="cookie" hidden><span>We use cookie
   </div>
 </footer>
 ${ICONS}
-<script src="/config.js"></script>
-<script src="/app.js" defer></script>`;
+<script src="/config.js?v=3"></script>
+<script src="/app.js?v=3" defer></script>`;
 
 const head = ({ title, desc, url, image, ld, type = "article" }) => `<!doctype html>
 <html lang="en">
@@ -83,7 +83,7 @@ const head = ({ title, desc, url, image, ld, type = "article" }) => `<!doctype h
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=3">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 </head>
 <body>`;
