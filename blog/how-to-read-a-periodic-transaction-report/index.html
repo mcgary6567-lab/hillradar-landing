@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to read a congressional Periodic Transaction Report (PTR), field by field | Hillradar AI</title>
+<meta name="description" content="A line-by-line guide to a congressional stock trade filing: owner codes, asset names and tickers, transaction type, dates, amount ranges, and the traps that trip up first-time readers.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Hillradar AI">
+<link rel="canonical" href="https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0f1c">
+<meta property="og:site_name" content="Hillradar AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/">
+<meta property="og:title" content="How to read a congressional Periodic Transaction Report (PTR), field by field | Hillradar AI">
+<meta property="og:description" content="A line-by-line guide to a congressional stock trade filing: owner codes, asset names and tickers, transaction type, dates, amount ranges, and the traps that trip up first-time readers.">
+<meta property="og:image" content="https://hillradar.com/assets/blog/how-to-read-a-periodic-transaction-report.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to read a congressional Periodic Transaction Report (PTR), field by field | Hillradar AI">
+<meta name="twitter:description" content="A line-by-line guide to a congressional stock trade filing: owner codes, asset names and tickers, transaction type, dates, amount ranges, and the traps that trip up first-time readers.">
+<meta name="twitter:image" content="https://hillradar.com/assets/blog/how-to-read-a-periodic-transaction-report.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/#post","headline":"How to read a congressional Periodic Transaction Report (PTR), field by field","description":"A line-by-line guide to a congressional stock trade filing: owner codes, asset names and tickers, transaction type, dates, amount ranges, and the traps that trip up first-time readers.","image":["https://hillradar.com/assets/blog/how-to-read-a-periodic-transaction-report.jpg"],"datePublished":"2026-10-13","dateModified":"2026-10-13","wordCount":961,"author":{"@type":"Organization","name":"Hillradar AI","url":"https://hillradar.com/"},"publisher":{"@id":"https://hillradar.com/#org"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/"},"keywords":"stock-act, basics, filings","articleSection":"Congress stock trades","inLanguage":"en-US","isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hillradar.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://hillradar.com/blog/"},{"@type":"ListItem","position":3,"name":"How to read a congressional Periodic Transaction Report (PTR), field by field","item":"https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What do SP, JT and DC mean on a filing?","acceptedAnswer":{"@type":"Answer","text":"They are owner codes: SP is the member's spouse, JT a joint account, DC a dependent child. A blank owner means the member themself."}},{"@type":"Question","name":"Why do some filings list a company without a ticker?","acceptedAnswer":{"@type":"Answer","text":"Bonds, municipal debt, private funds, real estate partnerships and some foreign securities have no exchange ticker. They are still reportable and still appear in trackers, usually flagged as non-stock assets."}},{"@type":"Question","name":"Is a 'sale (partial)' different from a sale?","acceptedAnswer":{"@type":"Answer","text":"Yes. The member sold part of the position and still holds the rest. It is still recorded as a sell in trackers, which is why sells can outnumber buys for a lawmaker who is slowly exiting a holding."}}]}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="/assets/logo.svg" width="46" height="46" alt="Hillradar AI logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
+    <nav class="nav">
+      <a class="hide" href="/#features">Features</a>
+      <a class="hide" href="/#data">Data</a>
+      <a class="hide" href="/#pricing">Pricing</a>
+      <a class="hide on" href="/blog/">Blog</a>
+      <a href="/login">Sign in</a>
+      <a class="btn gold sm" href="/signup"><span class="l">Create free account</span><span class="s">Get started</span></a>
+    </nav>
+  </div>
+</header>
+<main class="wrap article">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>How to read a PTR</span></nav>
+  <article>
+    <header class="ahead">
+      <span class="eyebrow">Guide</span>
+      <h1>How to read a congressional Periodic Transaction Report (PTR), field by field</h1>
+      <p class="lead">A Periodic Transaction Report looks like a dull form. Once you know its seven fields, it tells you who traded what, when, roughly how much, and how long they waited to say so.</p>
+      <div class="meta"><span><svg class="i" viewBox="0 0 24 24"><use href="#i-cal"/></svg> October 13, 2026</span><span><svg class="i" viewBox="0 0 24 24"><use href="#i-clock"/></svg> 4 min read</span><span><svg class="i" viewBox="0 0 24 24"><use href="#i-user"/></svg> Hillradar AI research</span><span>Data as of October 5, 2026</span></div>
+    </header>
+    <figure class="hero-img"><img src="/assets/blog/how-to-read-a-periodic-transaction-report.jpg" width="1200" height="630" alt="Annotated example of a congressional Periodic Transaction Report with each field labelled" fetchpriority="high"></figure>
+    <nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#anatomy">The seven fields</a></li><li><a href="#owner">Reading the owner column</a></li><li><a href="#asset">Asset names and tickers</a></li><li><a href="#type">Purchase, sale, partial sale, exchange</a></li><li><a href="#amount">The amount range</a></li><li><a href="#dates">Two dates, one gap</a></li><li><a href="#pitfalls">Common pitfalls</a></li><li><a href="#example-walkthrough">A worked example, line by line</a></li><li><a href="#annual">PTRs versus the annual financial disclosure</a></li><li><a href="#data-quality">Where parsing goes wrong</a></li></ol></nav>
+    <div class="prose">
+<h2 id="anatomy">The seven fields</h2>
+<ol>
+<li><strong>Owner</strong> — blank for the member, <code>SP</code> spouse, <code>JT</code> joint, <code>DC</code> dependent child.</li>
+<li><strong>Asset</strong> — the company or instrument name, usually with the ticker in brackets, e.g. <em>Microsoft Corporation (MSFT)</em>. Options show the underlying plus strike and expiry.</li>
+<li><strong>Transaction type</strong> — <code>P</code> purchase, <code>S</code> sale, <code>S (partial)</code> partial sale, <code>E</code> exchange.</li>
+<li><strong>Transaction date</strong> — the day the trade happened.</li>
+<li><strong>Notification date</strong> — when the member says they learned of it (relevant for managed accounts).</li>
+<li><strong>Amount</strong> — a range, never an exact value.</li>
+<li><strong>Filing date</strong> — stamped by the Clerk or Secretary; the clock that the 45-day rule is judged against.</li>
+</ol>
+<figure class="chart"><svg viewBox="0 0 760 260" role="img" aria-label="Who owns the traded asset, across all filings" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif"><title>Who owns the traded asset, across all filings</title><circle cx="150" cy="130" r="92" fill="none" stroke="#223052" stroke-width="34"/><circle cx="150" cy="130" r="92" fill="none" stroke="#e7b23c" stroke-width="34" stroke-dasharray="247.88988601664937 330.16316224387253" stroke-dashoffset="0" transform="rotate(-90 150 130)"><title>Member (self): 24,556</title></circle><circle cx="150" cy="130" r="92" fill="none" stroke="#4ea1ff" stroke-width="34" stroke-dasharray="172.52150806420173 405.5315401963202" stroke-dashoffset="-247.88988601664937" transform="rotate(-90 150 130)"><title>Joint account: 17,090</title></circle><circle cx="150" cy="130" r="92" fill="none" stroke="#22c58b" stroke-width="34" stroke-dasharray="140.722634430367 437.3304138301549" stroke-dashoffset="-420.4113940808511" transform="rotate(-90 150 130)"><title>Spouse: 13,940</title></circle><circle cx="150" cy="130" r="92" fill="none" stroke="#f26a6a" stroke-width="34" stroke-dasharray="16.919019749303807 561.134028511218" stroke-dashoffset="-561.134028511218" transform="rotate(-90 150 130)"><title>Dependent child: 1,676</title></circle><text x="150" y="126" text-anchor="middle" font-size="22" font-weight="700" fill="#e7ecf5">57,262</text><text x="150" y="146" text-anchor="middle" font-size="11" fill="#8a96ad">total</text><rect x="300" y="48" width="14" height="14" rx="4" fill="#e7b23c"/><text x="322" y="60" font-size="14" fill="#e7ecf5">Member (self)</text><text x="740" y="60" text-anchor="end" font-size="14" fill="#8a96ad">24,556 · 42.9%</text><rect x="300" y="82" width="14" height="14" rx="4" fill="#4ea1ff"/><text x="322" y="94" font-size="14" fill="#e7ecf5">Joint account</text><text x="740" y="94" text-anchor="end" font-size="14" fill="#8a96ad">17,090 · 29.8%</text><rect x="300" y="116" width="14" height="14" rx="4" fill="#22c58b"/><text x="322" y="128" font-size="14" fill="#e7ecf5">Spouse</text><text x="740" y="128" text-anchor="end" font-size="14" fill="#8a96ad">13,940 · 24.3%</text><rect x="300" y="150" width="14" height="14" rx="4" fill="#f26a6a"/><text x="322" y="162" font-size="14" fill="#e7ecf5">Dependent child</text><text x="740" y="162" text-anchor="end" font-size="14" fill="#8a96ad">1,676 · 2.9%</text></svg><figcaption>Owner field across 57,262 transactions in the Hillradar AI database, data as of 2026-10-05.</figcaption></figure>
+<h2 id="owner">Reading the owner column</h2>
+<p>The owner code changes how a trade should be read. A spouse's trade can be in an account the member has no control over, while a joint account implies shared decisions. In our data only 43% of transactions are the member's own; the rest are joint, spouse or child accounts. The <strong>Senate</strong> record skews even further: senators' own accounts make up a much smaller share than in the House, where self-owned trades dominate.</p>
+<h2 id="asset">Asset names and tickers</h2>
+<p>Most filings name a listed company and its ticker, which is what lets a tracker group trades by stock. But 17% of transactions in our database have <strong>no ticker</strong>: Treasury bills, municipal bonds, private funds, real-estate partnerships and crypto. They are still real transactions and still show up, but they are excluded from stock-only statistics such as <a href="/blog/most-traded-stocks-by-members-of-congress/">which companies Congress trades most</a>.</p>
+<h2 id="type">Purchase, sale, partial sale, exchange</h2>
+<p>Across the whole record there are 29,368 purchases and 27,892 sales, a ratio close to one. A lawmaker whose filings are mostly <em>S (partial)</em> is usually drawing down a position over time, often through a financial adviser, not making a series of bearish calls. Exchanges are rare (2 in total) and usually reflect a merger or a fund conversion rather than a decision.</p>
+<h2 id="amount">The amount range</h2>
+<p>Ranges are the most misread field. <strong>$15,001–$50,000</strong> does not mean around $30,000; it only tells you the true figure lies somewhere in that band. 69% of all transactions are in the smallest band. When Hillradar AI shows a "volume" for a lawmaker or a company, it is an <em>upper bound</em> built from the top of each band, and labelled as such. <a href="/blog/why-congress-trade-amounts-are-ranges/">Here is why the ranges exist and how to use them.</a></p>
+<h2 id="dates">Two dates, one gap</h2>
+<p>Subtract the transaction date from the filing date and you get the disclosure delay. The median is 27 days; anything above 45 is late under the Act. We print that number on every record because it is the fastest way to judge how fresh the information was when the public first saw it.</p>
+<div class="callout"><b>Practical tip:</b> when you see a burst of identical small trades on one day, it is almost always a managed account rebalancing. When you see a single large purchase in a stock the member does not usually hold, that is the row worth reading twice.</div>
+<h2 id="pitfalls">Common pitfalls</h2>
+<div class="takeaways"><b>Key takeaways</b><ul><li>Treating the midpoint of a range as the trade size.</li><li>Counting a partial sale as 'selling out' of a company.</li><li>Ignoring the owner code and attributing a spouse's managed-account trade to the member's judgment.</li><li>Reading a late filing as a recent trade: always check the transaction date, not just the publish date.</li></ul></div>
+<h2 id="example-walkthrough">A worked example, line by line</h2>
+<p>Take a representative filing: <em>SP · NVIDIA Corporation (NVDA) · P · 09/02/2026 · 09/15/2026 · $15,001–$50,000</em>, filed 09/30/2026. Reading left to right: the <strong>spouse's</strong> account bought NVIDIA on 2 September; the member says they were told on 15 September; the amount is somewhere between $15,001 and $50,000; the public saw it on 30 September, 28 days after the trade and inside the 45-day limit. What you do not know: the price paid, the number of shares, whether an adviser made the call, or whether the household already held NVIDIA. A tracker that shows "Rep. X bought $50,000 of NVIDIA" has overstated the filing twice, once on the amount and once on who decided.</p>
+<h2 id="annual">PTRs versus the annual financial disclosure</h2>
+<p>Periodic Transaction Reports are only half of the picture. Every member also files an <strong>annual financial disclosure</strong> each May covering the previous calendar year: assets held (again in ranges), income, liabilities, positions and gifts. The annual report tells you <em>what a member owns</em>; the PTR tells you <em>what changed and when</em>. Serious research uses both: a PTR showing a $250,001–$500,000 sale means something different for a member whose annual report shows a $5 million portfolio than for one whose total holdings are under $100,000. Trackers such as this one are built on PTRs because they are timely; for holdings, the annual reports on the Clerk and Senate sites remain the source.</p>
+<h2 id="data-quality">Where parsing goes wrong</h2>
+<p>Most errors in any congressional trade database come from three places. <strong>Scanned filings</strong>, common in older House years, need optical character recognition and sometimes misread tickers or dates. <strong>Non-standard asset names</strong>, such as a company written without its ticker, must be matched by name and can be mis-matched. <strong>Amendments</strong> add a second record for the same trade unless de-duplicated. In our database of 57,262 rows, every record keeps a link back to its filing so a reader can check the original, and amendments are merged by lawmaker, asset, date and amount. If you spot an error, the Contact page explains how to report it; corrections are reviewed within a business day.</p></div>
+    <section class="afaq"><h2 id="faq">Frequently asked questions</h2><details><summary>What do SP, JT and DC mean on a filing?</summary><p>They are owner codes: SP is the member's spouse, JT a joint account, DC a dependent child. A blank owner means the member themself.</p></details><details><summary>Why do some filings list a company without a ticker?</summary><p>Bonds, municipal debt, private funds, real estate partnerships and some foreign securities have no exchange ticker. They are still reportable and still appear in trackers, usually flagged as non-stock assets.</p></details><details><summary>Is a 'sale (partial)' different from a sale?</summary><p>Yes. The member sold part of the position and still holds the rest. It is still recorded as a sell in trackers, which is why sells can outnumber buys for a lawmaker who is slowly exiting a holding.</p></details></section>
+    <aside class="cta-box"><div><b>See the record for yourself</b><p>Every disclosed congressional trade since 2014, searchable and free. Follow a lawmaker or a company and get told when a new filing lands.</p></div><div class="btns"><a class="btn gold" href="/signup">Create a free account</a><a class="btn" href="/">How it works</a></div></aside>
+    <p class="disc-inline">Hillradar AI republishes public STOCK Act disclosures for research and education. Figures come from the official filings as collected in our database on the date shown; filings can be amended by the filer. Nothing here is investment advice.</p>
+  </article>
+  <section class="related"><h2>Related reading</h2><div class="grid3"><a class="post" href="/blog/what-is-the-stock-act/"><img src="/assets/blog/what-is-the-stock-act.jpg" width="600" height="315" alt="Timeline from a congressional stock trade to its public disclosure under the STOCK Act" loading="lazy"><div class="pb"><span class="pc">Guide</span><h3>The STOCK Act, explained: what members of Congress must disclose, and when</h3><p>What the 2012 STOCK Act requires US senators and representatives to disclose about their stock trades, the 45-day deadline, what a filing contains, and where the records are published.</p><small>October 13, 2026 · 4 min read</small></div></a><a class="post" href="/blog/congress-45-day-filing-rule-and-late-disclosures/"><img src="/assets/blog/congress-45-day-filing-rule-and-late-disclosures.jpg" width="600" height="315" alt="Bar chart showing how many days after a trade congressional disclosures are filed, in buckets" loading="lazy"><div class="pb"><span class="pc">Data story</span><h3>The 45-day rule: how late Congress really files its stock trades</h3><p>The STOCK Act gives lawmakers 45 days to disclose a trade. We measured the gap on 57,262 filings: the median is 27 days, but 14.6% are late and 5,548 arrived more than 90 days after the trade.</p><small>October 13, 2026 · 3 min read</small></div></a><a class="post" href="/blog/why-congress-trade-amounts-are-ranges/"><img src="/assets/blog/why-congress-trade-amounts-are-ranges.jpg" width="600" height="315" alt="Bar chart of congressional trade filings by amount range, dominated by the $1,001 to $15,000 band" loading="lazy"><div class="pb"><span class="pc">Guide</span><h3>Why congressional stock trades are reported as ranges, and how to use them anyway</h3><p>Lawmakers never disclose exact dollar amounts, only bands like $15,001–$50,000. Here are the bands, how 57,262 filings are distributed across them, and the honest way to estimate volume.</p><small>October 13, 2026 · 3 min read</small></div></a></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand fb" href="/"><img src="/assets/logo.svg" width="40" height="40" alt="Hillradar AI logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
+    <div class="social" aria-label="Follow Hillradar AI">
+      <a data-social="x" href="https://x.com/hillradarai" target="_blank" rel="noopener me" aria-label="Hillradar AI on X (Twitter)" title="X / Twitter"><svg class="i" viewBox="0 0 24 24"><use href="#i-x-logo"/></svg></a>
+      <a data-social="linkedin" href="https://www.linkedin.com/company/hillradar" target="_blank" rel="noopener me" aria-label="Hillradar AI on LinkedIn" title="LinkedIn"><svg class="i" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></a>
+    </div>
+    <span>© <span data-year>2026</span> <span data-company>Hillradar AI</span></span>
+    <nav>
+      <a href="/blog/">Blog</a><a href="/faq/">Help &amp; FAQ</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><a href="/disclaimer/">Disclaimer</a><a href="/contact/">Contact</a><a data-mail href="mailto:info@hillradar.com">info@hillradar.com</a>
+    </nav>
+  </div>
+</footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-x-logo" viewBox="0 0 24 24"><path d="M4 3h4.6l4.1 5.7L17.6 3H20l-6.2 7.3L20.5 21h-4.6l-4.4-6.1L6.3 21H4l6.5-7.6z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+</svg>
+<script src="/config.js"></script>
+<script src="/app.js" defer></script>
+</body></html>

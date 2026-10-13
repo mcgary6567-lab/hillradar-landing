@@ -10,7 +10,7 @@ Hillradar marketing / Google Ads landing page. Plain HTML, CSS and JS. No build 
 - `assets/` – icons
 
 ## Public pages
-`faq.html`, `terms.html`, `privacy.html`, `disclaimer.html`, `contact.html` are exported from the app
+`/faq/`, `/terms/`, `/privacy/`, `/disclaimer/`, `/contact/` are exported from the app
 (`cd server && npm run export:landing`) so the marketing site serves them itself. Only sign-in / sign-up links go to the app.
 
 ## Deploy
@@ -23,3 +23,8 @@ fallback numbers in the HTML stay, so the page never looks broken.
 
 ## Ads
 Final URL: the root of this domain. Links to sign-up keep `?plan=` and `utm_*` parameters.
+
+## Blog
+Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build with `node tools/build-blog.mjs`
+(writes `/blog/`, `sitemap.xml`, the blog section of `llms.txt`) and `node tools/render-heroes.mjs` for the hero images.
+`.htaccess` gives clean URLs and 301s from the old `.html` paths on Apache hosts such as Hostinger.

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What is a congressional trading cluster, and how AI Scanning finds one | Hillradar AI</title>
+<meta name="description" content="When several members of Congress file trades in the same company within a few weeks, that is a cluster. Here is how Hillradar AI detects and scores them, what the back-test shows, and the caveats that come with it.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Hillradar AI">
+<link rel="canonical" href="https://hillradar.com/blog/what-is-a-congressional-trading-cluster/">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0f1c">
+<meta property="og:site_name" content="Hillradar AI">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hillradar.com/blog/what-is-a-congressional-trading-cluster/">
+<meta property="og:title" content="What is a congressional trading cluster, and how AI Scanning finds one | Hillradar AI">
+<meta property="og:description" content="When several members of Congress file trades in the same company within a few weeks, that is a cluster. Here is how Hillradar AI detects and scores them, what the back-test shows, and the caveats that come with it.">
+<meta property="og:image" content="https://hillradar.com/assets/blog/what-is-a-congressional-trading-cluster.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is a congressional trading cluster, and how AI Scanning finds one | Hillradar AI">
+<meta name="twitter:description" content="When several members of Congress file trades in the same company within a few weeks, that is a cluster. Here is how Hillradar AI detects and scores them, what the back-test shows, and the caveats that come with it.">
+<meta name="twitter:image" content="https://hillradar.com/assets/blog/what-is-a-congressional-trading-cluster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://hillradar.com/blog/what-is-a-congressional-trading-cluster/#post","headline":"What is a congressional trading cluster, and how AI Scanning finds one","description":"When several members of Congress file trades in the same company within a few weeks, that is a cluster. Here is how Hillradar AI detects and scores them, what the back-test shows, and the caveats that come with it.","image":["https://hillradar.com/assets/blog/what-is-a-congressional-trading-cluster.jpg"],"datePublished":"2026-10-13","dateModified":"2026-10-13","wordCount":889,"author":{"@type":"Organization","name":"Hillradar AI","url":"https://hillradar.com/"},"publisher":{"@id":"https://hillradar.com/#org"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://hillradar.com/blog/what-is-a-congressional-trading-cluster/"},"keywords":"ai-scanning, data, how-to","articleSection":"Congress stock trades","inLanguage":"en-US","isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hillradar.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://hillradar.com/blog/"},{"@type":"ListItem","position":3,"name":"What is a congressional trading cluster, and how AI Scanning finds one","item":"https://hillradar.com/blog/what-is-a-congressional-trading-cluster/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as a cluster?","acceptedAnswer":{"@type":"Answer","text":"Two or more different lawmakers filing a purchase in the same company within 45 days of each other. Clusters are stronger when more lawmakers are involved, when both parties are represented, when the filings are recent, and when the buyers have good historical track records."}},{"@type":"Question","name":"Is a cluster a buy signal?","acceptedAnswer":{"@type":"Answer","text":"No. It is a research flag: an unusual concentration of public disclosures. Hillradar AI scores it, explains the reasons in plain English and shows the back-tested history, and leaves the decision to you or your adviser."}},{"@type":"Question","name":"How is a lawmaker's track record measured?","acceptedAnswer":{"@type":"Answer","text":"For each disclosed purchase we compare the stock's return over the following six months with the S&P 500 over the same window. The share of purchases that beat the market is the lawmaker's hit rate; it requires a minimum number of trades to be shown."}}]}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="/assets/logo.svg" width="46" height="46" alt="Hillradar AI logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
+    <nav class="nav">
+      <a class="hide" href="/#features">Features</a>
+      <a class="hide" href="/#data">Data</a>
+      <a class="hide" href="/#pricing">Pricing</a>
+      <a class="hide on" href="/blog/">Blog</a>
+      <a href="/login">Sign in</a>
+      <a class="btn gold sm" href="/signup"><span class="l">Create free account</span><span class="s">Get started</span></a>
+    </nav>
+  </div>
+</header>
+<main class="wrap article">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>Congressional trading clusters</span></nav>
+  <article>
+    <header class="ahead">
+      <span class="eyebrow">Explainer</span>
+      <h1>What is a congressional trading cluster, and how AI Scanning finds one</h1>
+      <p class="lead">One lawmaker buying a stock is noise. Five lawmakers from both parties buying the same stock in the same month is a pattern worth a second look. This is the logic behind AI Scanning.</p>
+      <div class="meta"><span><svg class="i" viewBox="0 0 24 24"><use href="#i-cal"/></svg> October 13, 2026</span><span><svg class="i" viewBox="0 0 24 24"><use href="#i-clock"/></svg> 4 min read</span><span><svg class="i" viewBox="0 0 24 24"><use href="#i-user"/></svg> Hillradar AI research</span><span>Data as of October 5, 2026</span></div>
+    </header>
+    <figure class="hero-img"><img src="/assets/blog/what-is-a-congressional-trading-cluster.jpg" width="1200" height="630" alt="Diagram of several lawmakers' trades in the same company converging within a 45-day window" fetchpriority="high"></figure>
+    <nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#definition">Definition</a></li><li><a href="#scoring">How a cluster is scored</a></li><li><a href="#backtest">What the history shows</a></li><li><a href="#not">What AI Scanning is not</a></li><li><a href="#using">Using it well</a></li><li><a href="#why-45">Why a 45-day window</a></li><li><a href="#examples">What clusters look like in the record</a></li><li><a href="#false">False positives and how we limit them</a></li></ol></nav>
+    <div class="prose">
+<h2 id="definition">Definition</h2>
+<p>A <strong>trading cluster</strong> is a group of disclosed purchases of the same company by different members of Congress inside a short window, which Hillradar AI sets at 45 days, the same length as the STOCK Act filing deadline. The idea is borrowed from insider-trading research in the corporate world, where several executives buying at once has long been treated as more informative than one.</p>
+<figure class="chart"><svg viewBox="0 0 760 150" role="img" aria-label="A four-lawmaker, bipartisan cluster inside the 45-day window" xmlns="http://www.w3.org/2000/svg" font-family="Inter,system-ui,sans-serif"><title>A four-lawmaker, bipartisan cluster inside the 45-day window</title><line x1="60" x2="700" y1="70" y2="70" stroke="#223052" stroke-width="4"/><circle cx="60" cy="70" r="12" fill="#4ea1ff" stroke="#0a0f1c" stroke-width="4"/><text x="60" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#e7ecf5">Day 0</text><text x="60" y="104" text-anchor="middle" font-size="11.5" fill="#8a96ad">Rep. A buys</text><circle cx="220" cy="70" r="12" fill="#f26a6a" stroke="#0a0f1c" stroke-width="4"/><text x="220" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#e7ecf5">Day 11</text><text x="220" y="104" text-anchor="middle" font-size="11.5" fill="#8a96ad">Sen. B buys</text><circle cx="380" cy="70" r="12" fill="#4ea1ff" stroke="#0a0f1c" stroke-width="4"/><text x="380" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#e7ecf5">Day 19</text><text x="380" y="104" text-anchor="middle" font-size="11.5" fill="#8a96ad">Rep. C buys</text><circle cx="540" cy="70" r="12" fill="#f26a6a" stroke="#0a0f1c" stroke-width="4"/><text x="540" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#e7ecf5">Day 32</text><text x="540" y="104" text-anchor="middle" font-size="11.5" fill="#8a96ad">Rep. D buys</text><circle cx="700" cy="70" r="12" fill="#e7b23c" stroke="#0a0f1c" stroke-width="4"/><text x="700" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#e7ecf5">Day 45</text><text x="700" y="104" text-anchor="middle" font-size="11.5" fill="#8a96ad">window closes</text></svg><figcaption>Four purchases of one company by four different lawmakers inside 45 days: a bipartisan cluster.</figcaption></figure>
+<h2 id="scoring">How a cluster is scored</h2>
+<p>Each company in the window gets a score from 0 to 100, built from five ingredients:</p>
+<ol>
+<li><strong>Breadth</strong> — how many distinct lawmakers bought, and how recently.</li>
+<li><strong>Bipartisanship</strong> — buyers from both parties count for more than a single-party group.</li>
+<li><strong>Track record of the buyers</strong> — a purchase by a lawmaker whose past buys beat the market 65% of the time weighs more than one from a 40% record.</li>
+<li><strong>History in that stock</strong> — how previous congressional purchases of the same company performed.</li>
+<li><strong>Sell pressure</strong> — concurrent sales by other lawmakers lower the score.</li>
+</ol>
+<p>Scores of 55 and above are labelled <em>high</em> confidence, 35 to 54 <em>medium</em>, and the rest <em>watch</em>. Every score comes with the list of buyers, the reasons in plain English and, when AI insight is enabled, a short thesis.</p>
+<h2 id="backtest">What the history shows</h2>
+<p>We measured every disclosed stock purchase since 2014 with a known six-month outcome, 21,526 trades, against the S&amp;P 500 over the same six months. Taken all together, congressional purchases returned <strong>9.3%</strong> over six months on average, essentially identical to the market. Lawmakers as a group are not beating the index.</p>
+<p>The picture changes when the rule gets stricter. Purchases that were part of a cluster did somewhat better than the average, and purchases that were part of a cluster <em>and</em> made by lawmakers with strong track records did markedly better in the historical data. The live figures, recomputed from the database, are shown on the Investment Plan page inside the app rather than quoted here, because they move as filings arrive.</p>
+<div class="callout"><b>Caveats, stated plainly:</b> the back-test applies <em>today's</em> track records to past trades, which flatters results; it ignores fees, taxes and the 45-day disclosure lag; averages hide large winners and losers; and past performance does not predict future results. Treat the numbers as evidence that the pattern is worth studying, not as a promise.</div>
+<h2 id="not">What AI Scanning is not</h2>
+<div class="takeaways"><b>Key takeaways</b><ul><li>It is not a recommendation engine; it ranks public records by how unusual they are.</li><li>It does not know why anyone traded; filings contain no reasons.</li><li>It cannot see a trade before it is filed, so every cluster is already weeks old by law.</li><li>It is a research tool for people who want the primary source organised, not a substitute for advice.</li></ul></div>
+<h2 id="using">Using it well</h2>
+<p>Start from the cluster, then open the company page and read the individual filings: who bought, in which account, in what band, and how late. Check whether the buyers usually hold that stock. Then compare with your own research. That workflow, record first and conclusions second, is what the tool is designed for. <a href="/blog/how-to-get-alerts-for-congress-stock-trades/">You can also have new clusters sent to Telegram, WhatsApp or email.</a></p>
+<h2 id="why-45">Why a 45-day window</h2>
+<p>Forty-five days is the STOCK Act's own deadline, so it is the longest gap two trades can have while still being disclosed in the same "generation" of filings. A shorter window, say two weeks, would miss clusters where one member's filing arrived late; a longer one would group unrelated trades. Because the window is applied to <em>transaction</em> dates, not filing dates, a cluster can be detected only once the last filing in it is published, which in practice means two to seven weeks after the first purchase.</p>
+<h2 id="examples">What clusters look like in the record</h2>
+<p>Since January 2025 the stocks bought by the most distinct lawmakers were AAPL (45), MSFT (43), AMZN (33), NVDA (32). Not all of those are clusters in the strict sense, because many of the purchases are spread across months, but the ranking shows where congressional buying concentrates. NVIDIA is the clearest recent example of a company moving from occasional to widespread holding: it ranks 13th in the all-time list by breadth and 4th since 2025. A cluster detector surfaces that kind of shift within weeks rather than after a year-end review.</p>
+<h2 id="false">False positives and how we limit them</h2>
+<ul>
+<li><strong>Index rebalancing</strong> can make several managed accounts buy the same large-cap on the same day; the track-record weight and the "do these buyers usually hold this" check reduce the score of such clusters.</li>
+<li><strong>Spouse and joint accounts</strong> are included (they are part of the disclosure) but shown with their owner code so you can discount them.</li>
+<li><strong>Catch-up filings</strong> that disclose months of old trades at once can create a cluster of stale purchases; the freshness term in the score penalises them.</li>
+<li><strong>Thin history</strong>: a lawmaker with five trades does not get a track record at all, so one lucky call cannot dominate a score.</li>
+</ul>
+<p>Read together with the <a href="/disclaimer/">Disclaimer</a>, the rule is simple: a cluster tells you where to read first, never what to do.</p></div>
+    <section class="afaq"><h2 id="faq">Frequently asked questions</h2><details><summary>What counts as a cluster?</summary><p>Two or more different lawmakers filing a purchase in the same company within 45 days of each other. Clusters are stronger when more lawmakers are involved, when both parties are represented, when the filings are recent, and when the buyers have good historical track records.</p></details><details><summary>Is a cluster a buy signal?</summary><p>No. It is a research flag: an unusual concentration of public disclosures. Hillradar AI scores it, explains the reasons in plain English and shows the back-tested history, and leaves the decision to you or your adviser.</p></details><details><summary>How is a lawmaker's track record measured?</summary><p>For each disclosed purchase we compare the stock's return over the following six months with the S&P 500 over the same window. The share of purchases that beat the market is the lawmaker's hit rate; it requires a minimum number of trades to be shown.</p></details></section>
+    <aside class="cta-box"><div><b>See the record for yourself</b><p>Every disclosed congressional trade since 2014, searchable and free. Follow a lawmaker or a company and get told when a new filing lands.</p></div><div class="btns"><a class="btn gold" href="/signup">Create a free account</a><a class="btn" href="/">How it works</a></div></aside>
+    <p class="disc-inline">Hillradar AI republishes public STOCK Act disclosures for research and education. Figures come from the official filings as collected in our database on the date shown; filings can be amended by the filer. Nothing here is investment advice.</p>
+  </article>
+  <section class="related"><h2>Related reading</h2><div class="grid3"><a class="post" href="/blog/congress-stock-trades-by-the-numbers/"><img src="/assets/blog/congress-stock-trades-by-the-numbers.jpg" width="600" height="315" alt="Bar chart of disclosed congressional stock transactions per year, 2014 to 2026" loading="lazy"><div class="pb"><span class="pc">Data story</span><h3>Congress stock trades by the numbers: 57,262 filings from 2014 to 2026</h3><p>Every disclosed congressional transaction since 2014 in one data story: filings per year, buys versus sells, Republicans versus Democrats, House versus Senate, and the states that trade the most.</p><small>October 13, 2026 · 4 min read</small></div></a><a class="post" href="/blog/most-traded-stocks-by-members-of-congress/"><img src="/assets/blog/most-traded-stocks-by-members-of-congress.jpg" width="600" height="315" alt="Horizontal bar chart of the stocks traded by the most members of Congress, led by Apple and Microsoft" loading="lazy"><div class="pb"><span class="pc">Data story</span><h3>The 15 stocks traded by the most members of Congress</h3><p>Which companies appear in the most lawmakers' disclosures? Apple, Microsoft and Amazon lead a list of 15 stocks ranked by how many members of Congress have bought or sold them since 2014.</p><small>October 13, 2026 · 4 min read</small></div></a><a class="post" href="/blog/congress-45-day-filing-rule-and-late-disclosures/"><img src="/assets/blog/congress-45-day-filing-rule-and-late-disclosures.jpg" width="600" height="315" alt="Bar chart showing how many days after a trade congressional disclosures are filed, in buckets" loading="lazy"><div class="pb"><span class="pc">Data story</span><h3>The 45-day rule: how late Congress really files its stock trades</h3><p>The STOCK Act gives lawmakers 45 days to disclose a trade. We measured the gap on 57,262 filings: the median is 27 days, but 14.6% are late and 5,548 arrived more than 90 days after the trade.</p><small>October 13, 2026 · 3 min read</small></div></a></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand fb" href="/"><img src="/assets/logo.svg" width="40" height="40" alt="Hillradar AI logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
+    <div class="social" aria-label="Follow Hillradar AI">
+      <a data-social="x" href="https://x.com/hillradarai" target="_blank" rel="noopener me" aria-label="Hillradar AI on X (Twitter)" title="X / Twitter"><svg class="i" viewBox="0 0 24 24"><use href="#i-x-logo"/></svg></a>
+      <a data-social="linkedin" href="https://www.linkedin.com/company/hillradar" target="_blank" rel="noopener me" aria-label="Hillradar AI on LinkedIn" title="LinkedIn"><svg class="i" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></a>
+    </div>
+    <span>© <span data-year>2026</span> <span data-company>Hillradar AI</span></span>
+    <nav>
+      <a href="/blog/">Blog</a><a href="/faq/">Help &amp; FAQ</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><a href="/disclaimer/">Disclaimer</a><a href="/contact/">Contact</a><a data-mail href="mailto:info@hillradar.com">info@hillradar.com</a>
+    </nav>
+  </div>
+</footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-x-logo" viewBox="0 0 24 24"><path d="M4 3h4.6l4.1 5.7L17.6 3H20l-6.2 7.3L20.5 21h-4.6l-4.4-6.1L6.3 21H4l6.5-7.6z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+</svg>
+<script src="/config.js"></script>
+<script src="/app.js" defer></script>
+</body></html>

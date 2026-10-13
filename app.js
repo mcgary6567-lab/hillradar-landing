@@ -112,12 +112,13 @@
   // footer year
   setAll("data-year", null, String(new Date().getFullYear()));
 
-  // point every app link (/signup, /login, /faq, /terms …) at APP_URL and carry
-  // ?plan=pro + UTM params through to sign-up / sign-in for ad tracking
+  // only links into the app (/signup, /login, /settings, /trades …) point at APP_URL; everything else
+  // (/faq/, /blog/, /terms/ …) stays on this site. ?plan=pro + UTM params carry through to sign-up / sign-in.
+  var APP_ROUTES = /^\/(signup|login|settings|trades|politicians|issuers|insights|signals|invest|admin)(\/|$|\?)/;
   var qs = new URLSearchParams(window.location.search);
   $$('a[href^="/"]').forEach(function (a) {
     var href = a.getAttribute("href");
-    if (href === "/" ) { a.setAttribute("href", APP_URL ? APP_URL + "/" : "/"); return; }
+    if (!APP_ROUTES.test(href)) return;
     var url = new URL(href, APP_URL || window.location.origin);
     if (/^\/(signup|login)/.test(url.pathname)) qs.forEach(function (v, k) { if (!url.searchParams.has(k)) url.searchParams.set(k, v); });
     a.setAttribute("href", APP_URL ? url.href : url.pathname + url.search);

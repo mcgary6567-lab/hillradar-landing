@@ -1,0 +1,2569 @@
+{
+ "asOf": "2026-10-05",
+ "totals": {
+  "trades": 57262,
+  "pols": 352,
+  "issuers": 9742,
+  "buys": 29368,
+  "sells": 27892,
+  "exch": 2
+ },
+ "perYear": [
+  {
+   "y": "2014",
+   "n": 705,
+   "buys": 358,
+   "sells": 347
+  },
+  {
+   "y": "2015",
+   "n": 3565,
+   "buys": 1901,
+   "sells": 1664
+  },
+  {
+   "y": "2016",
+   "n": 3856,
+   "buys": 2201,
+   "sells": 1655
+  },
+  {
+   "y": "2017",
+   "n": 3706,
+   "buys": 2072,
+   "sells": 1634
+  },
+  {
+   "y": "2018",
+   "n": 4553,
+   "buys": 2479,
+   "sells": 2074
+  },
+  {
+   "y": "2019",
+   "n": 5623,
+   "buys": 2641,
+   "sells": 2982
+  },
+  {
+   "y": "2020",
+   "n": 7003,
+   "buys": 3666,
+   "sells": 3337
+  },
+  {
+   "y": "2021",
+   "n": 4750,
+   "buys": 2361,
+   "sells": 2389
+  },
+  {
+   "y": "2022",
+   "n": 3662,
+   "buys": 1916,
+   "sells": 1746
+  },
+  {
+   "y": "2023",
+   "n": 4909,
+   "buys": 2223,
+   "sells": 2686
+  },
+  {
+   "y": "2024",
+   "n": 3251,
+   "buys": 1720,
+   "sells": 1531
+  },
+  {
+   "y": "2025",
+   "n": 8215,
+   "buys": 3961,
+   "sells": 4254
+  },
+  {
+   "y": "2026",
+   "n": 3464,
+   "buys": 1869,
+   "sells": 1593
+  }
+ ],
+ "byParty": [
+  {
+   "party": "Republican",
+   "n": 29430,
+   "pols": 196
+  },
+  {
+   "party": "Democrat",
+   "n": 27656,
+   "pols": 148
+  },
+  {
+   "party": "Independent",
+   "n": 128,
+   "pols": 3
+  },
+  {
+   "party": null,
+   "n": 36,
+   "pols": 4
+  },
+  {
+   "party": "Libertarian",
+   "n": 12,
+   "pols": 1
+  }
+ ],
+ "byChamber": [
+  {
+   "chamber": "House",
+   "n": 46096,
+   "pols": 275,
+   "avg_delay": 59.4,
+   "late": 7153
+  },
+  {
+   "chamber": "Senate",
+   "n": 11166,
+   "pols": 77,
+   "avg_delay": 41.8,
+   "late": 1184
+  }
+ ],
+ "topCompanies": [
+  {
+   "ticker": "AAPL",
+   "name": "Apple Inc.",
+   "pols": 134,
+   "n": 805,
+   "buys": 381,
+   "sells": 424
+  },
+  {
+   "ticker": "MSFT",
+   "name": "Microsoft Corporation",
+   "pols": 122,
+   "n": 883,
+   "buys": 453,
+   "sells": 430
+  },
+  {
+   "ticker": "AMZN",
+   "name": "Amazon.com, Inc.",
+   "pols": 109,
+   "n": 430,
+   "buys": 265,
+   "sells": 165
+  },
+  {
+   "ticker": "JPM",
+   "name": "JPMorgan Chase & Co.",
+   "pols": 84,
+   "n": 279,
+   "buys": 145,
+   "sells": 134
+  },
+  {
+   "ticker": "JNJ",
+   "name": "Johnson & Johnson",
+   "pols": 80,
+   "n": 305,
+   "buys": 174,
+   "sells": 131
+  },
+  {
+   "ticker": "DIS",
+   "name": "The Walt Disney Company",
+   "pols": 80,
+   "n": 274,
+   "buys": 144,
+   "sells": 130
+  },
+  {
+   "ticker": "PG",
+   "name": "The Procter & Gamble Company",
+   "pols": 80,
+   "n": 260,
+   "buys": 151,
+   "sells": 109
+  },
+  {
+   "ticker": "UNH",
+   "name": "UnitedHealth Group Incorporated",
+   "pols": 70,
+   "n": 291,
+   "buys": 133,
+   "sells": 158
+  },
+  {
+   "ticker": "XOM",
+   "name": "ExxonMobil Holdings Corporation",
+   "pols": 70,
+   "n": 268,
+   "buys": 117,
+   "sells": 151
+  },
+  {
+   "ticker": "GOOGL",
+   "name": "Alphabet Inc.",
+   "pols": 69,
+   "n": 221,
+   "buys": 112,
+   "sells": 109
+  },
+  {
+   "ticker": "T",
+   "name": "AT&T Inc.",
+   "pols": 68,
+   "n": 261,
+   "buys": 142,
+   "sells": 119
+  },
+  {
+   "ticker": "PEP",
+   "name": "PepsiCo, Inc.",
+   "pols": 68,
+   "n": 215,
+   "buys": 97,
+   "sells": 118
+  },
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA Corporation",
+   "pols": 67,
+   "n": 433,
+   "buys": 248,
+   "sells": 185
+  },
+  {
+   "ticker": "CVX",
+   "name": "Chevron Corporation",
+   "pols": 67,
+   "n": 218,
+   "buys": 103,
+   "sells": 115
+  },
+  {
+   "ticker": "VZ",
+   "name": "Verizon Communications Inc.",
+   "pols": 66,
+   "n": 212,
+   "buys": 91,
+   "sells": 121
+  }
+ ],
+ "topLawmakers": [
+  {
+   "name": "Rep. Thomas MacArthur",
+   "party": "Republican",
+   "chamber": "House",
+   "state": "NJ",
+   "n": 3267,
+   "buys": 1707,
+   "sells": 1560,
+   "first": "2015-01-05",
+   "last": "2019-01-02"
+  },
+  {
+   "name": "Rep. Josh Gottheimer",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "NJ",
+   "n": 3249,
+   "buys": 1361,
+   "sells": 1888,
+   "first": "2017-01-03",
+   "last": "2026-08-14"
+  },
+  {
+   "name": "Rep. Gilbert Ray Cisneros Jr.",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "CA",
+   "n": 2500,
+   "buys": 1456,
+   "sells": 1044,
+   "first": "2019-01-18",
+   "last": "2026-08-28"
+  },
+  {
+   "name": "Sen. David Perdue",
+   "party": "Republican",
+   "chamber": "Senate",
+   "state": "GA",
+   "n": 1511,
+   "buys": 757,
+   "sells": 754,
+   "first": "2015-01-06",
+   "last": "2020-09-25"
+  },
+  {
+   "name": "Rep. Lisa C. McClain",
+   "party": "Republican",
+   "chamber": "House",
+   "state": "MI",
+   "n": 1399,
+   "buys": 707,
+   "sells": 692,
+   "first": "2024-03-11",
+   "last": "2026-07-15"
+  },
+  {
+   "name": "Rep. Daniel S. Goldman",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "NY",
+   "n": 1196,
+   "buys": 353,
+   "sells": 843,
+   "first": "2023-01-10",
+   "last": "2025-02-11"
+  },
+  {
+   "name": "Rep. Lois Frankel",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "FL",
+   "n": 1173,
+   "buys": 548,
+   "sells": 625,
+   "first": "2014-12-17",
+   "last": "2023-09-08"
+  },
+  {
+   "name": "Rep. Alan S. Lowenthal",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "CA",
+   "n": 1168,
+   "buys": 557,
+   "sells": 611,
+   "first": "2014-01-07",
+   "last": "2022-12-08"
+  },
+  {
+   "name": "Sen. Tommy Tuberville",
+   "party": "Republican",
+   "chamber": "Senate",
+   "state": "AL",
+   "n": 1150,
+   "buys": 486,
+   "sells": 664,
+   "first": "2021-01-04",
+   "last": "2026-06-09"
+  },
+  {
+   "name": "Sen. Thomas R. Carper",
+   "party": "Democrat",
+   "chamber": "Senate",
+   "state": "DE",
+   "n": 1087,
+   "buys": 571,
+   "sells": 516,
+   "first": "2014-01-02",
+   "last": "2024-08-01"
+  },
+  {
+   "name": "Rep. Susie Lee",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "NV",
+   "n": 1057,
+   "buys": 524,
+   "sells": 533,
+   "first": "2019-01-11",
+   "last": "2026-07-01"
+  },
+  {
+   "name": "Rep. K. Michael Conaway",
+   "party": "Republican",
+   "chamber": "House",
+   "state": "TX",
+   "n": 1056,
+   "buys": 501,
+   "sells": 555,
+   "first": "2014-04-22",
+   "last": "2020-12-21"
+  },
+  {
+   "name": "Rep. Greg Gianforte",
+   "party": "Republican",
+   "chamber": "House",
+   "state": "MT",
+   "n": 1033,
+   "buys": 513,
+   "sells": 520,
+   "first": "2017-06-30",
+   "last": "2020-12-18"
+  },
+  {
+   "name": "Rep. Donald S. Beyer Jr.",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "VA",
+   "n": 936,
+   "buys": 499,
+   "sells": 435,
+   "first": "2019-10-07",
+   "last": "2026-09-23"
+  },
+  {
+   "name": "Rep. Dean Phillips",
+   "party": "Democrat",
+   "chamber": "House",
+   "state": "MN",
+   "n": 915,
+   "buys": 449,
+   "sells": 466,
+   "first": "2019-01-04",
+   "last": "2024-07-02"
+  }
+ ],
+ "delay": {
+  "avg": 55.9,
+  "late": 8337,
+  "late90": 5548,
+  "n": 57262,
+  "fast": 11889
+ },
+ "delayMedian": {
+  "m": 27
+ },
+ "delayBuckets": [
+  {
+   "b": "0-15",
+   "n": 13166
+  },
+  {
+   "b": "16-30",
+   "n": 21877
+  },
+  {
+   "b": "31-45",
+   "n": 13882
+  },
+  {
+   "b": "46-90",
+   "n": 2789
+  },
+  {
+   "b": "90+",
+   "n": 5548
+  }
+ ],
+ "amountBands": [
+  {
+   "amount_min": 1,
+   "amount_max": 0,
+   "n": 2
+  },
+  {
+   "amount_min": 9,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 19,
+   "amount_max": 99,
+   "n": 1
+  },
+  {
+   "amount_min": 20,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 20,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 20,
+   "amount_max": 4,
+   "n": 1
+  },
+  {
+   "amount_min": 20,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 21,
+   "amount_max": 32,
+   "n": 1
+  },
+  {
+   "amount_min": 22,
+   "amount_max": 7,
+   "n": 1
+  },
+  {
+   "amount_min": 24,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 30,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 30,
+   "amount_max": 56,
+   "n": 1
+  },
+  {
+   "amount_min": 30,
+   "amount_max": 60,
+   "n": 1
+  },
+  {
+   "amount_min": 39,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 40,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 41,
+   "amount_max": 89,
+   "n": 1
+  },
+  {
+   "amount_min": 43,
+   "amount_max": 99,
+   "n": 2
+  },
+  {
+   "amount_min": 45,
+   "amount_max": 60,
+   "n": 1
+  },
+  {
+   "amount_min": 47,
+   "amount_max": 11,
+   "n": 1
+  },
+  {
+   "amount_min": 56,
+   "amount_max": 18,
+   "n": 1
+  },
+  {
+   "amount_min": 58,
+   "amount_max": 54,
+   "n": 1
+  },
+  {
+   "amount_min": 60,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 60,
+   "amount_max": 33,
+   "n": 1
+  },
+  {
+   "amount_min": 60,
+   "amount_max": 62,
+   "n": 1
+  },
+  {
+   "amount_min": 61,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 63,
+   "amount_max": 27,
+   "n": 1
+  },
+  {
+   "amount_min": 63,
+   "amount_max": 28,
+   "n": 1
+  },
+  {
+   "amount_min": 67,
+   "amount_max": 61,
+   "n": 1
+  },
+  {
+   "amount_min": 71,
+   "amount_max": 29,
+   "n": 1
+  },
+  {
+   "amount_min": 72,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 73,
+   "amount_max": 57,
+   "n": 1
+  },
+  {
+   "amount_min": 80,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 80,
+   "amount_max": 2,
+   "n": 1
+  },
+  {
+   "amount_min": 80,
+   "amount_max": 59,
+   "n": 1
+  },
+  {
+   "amount_min": 80,
+   "amount_max": 83,
+   "n": 1
+  },
+  {
+   "amount_min": 80,
+   "amount_max": 94,
+   "n": 1
+  },
+  {
+   "amount_min": 84,
+   "amount_max": 39,
+   "n": 2
+  },
+  {
+   "amount_min": 84,
+   "amount_max": 48,
+   "n": 2
+  },
+  {
+   "amount_min": 90,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 91,
+   "amount_max": 7,
+   "n": 1
+  },
+  {
+   "amount_min": 91,
+   "amount_max": 50,
+   "n": 1
+  },
+  {
+   "amount_min": 91,
+   "amount_max": 69,
+   "n": 1
+  },
+  {
+   "amount_min": 94,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 94,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 96,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 96,
+   "amount_max": 86,
+   "n": 1
+  },
+  {
+   "amount_min": 97,
+   "amount_max": 82,
+   "n": 1
+  },
+  {
+   "amount_min": 99,
+   "amount_max": 83,
+   "n": 1
+  },
+  {
+   "amount_min": 103,
+   "amount_max": 61,
+   "n": 1
+  },
+  {
+   "amount_min": 104,
+   "amount_max": 25,
+   "n": 2
+  },
+  {
+   "amount_min": 104,
+   "amount_max": 42,
+   "n": 1
+  },
+  {
+   "amount_min": 107,
+   "amount_max": 6,
+   "n": 1
+  },
+  {
+   "amount_min": 109,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 111,
+   "amount_max": 52,
+   "n": 1
+  },
+  {
+   "amount_min": 112,
+   "amount_max": 15,
+   "n": 1
+  },
+  {
+   "amount_min": 115,
+   "amount_max": 32,
+   "n": 1
+  },
+  {
+   "amount_min": 116,
+   "amount_max": 94,
+   "n": 1
+  },
+  {
+   "amount_min": 117,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 117,
+   "amount_max": 79,
+   "n": 1
+  },
+  {
+   "amount_min": 120,
+   "amount_max": 43,
+   "n": 1
+  },
+  {
+   "amount_min": 120,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 120,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 120,
+   "amount_max": 89,
+   "n": 1
+  },
+  {
+   "amount_min": 121,
+   "amount_max": 25,
+   "n": 1
+  },
+  {
+   "amount_min": 122,
+   "amount_max": 2,
+   "n": 1
+  },
+  {
+   "amount_min": 122,
+   "amount_max": 63,
+   "n": 1
+  },
+  {
+   "amount_min": 125,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 126,
+   "amount_max": 40,
+   "n": 1
+  },
+  {
+   "amount_min": 134,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 135,
+   "amount_max": 55,
+   "n": 1
+  },
+  {
+   "amount_min": 146,
+   "amount_max": 65,
+   "n": 1
+  },
+  {
+   "amount_min": 147,
+   "amount_max": 24,
+   "n": 1
+  },
+  {
+   "amount_min": 149,
+   "amount_max": 68,
+   "n": 1
+  },
+  {
+   "amount_min": 152,
+   "amount_max": 12,
+   "n": 1
+  },
+  {
+   "amount_min": 152,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 154,
+   "amount_max": 22,
+   "n": 1
+  },
+  {
+   "amount_min": 155,
+   "amount_max": 92,
+   "n": 1
+  },
+  {
+   "amount_min": 160,
+   "amount_max": 17,
+   "n": 2
+  },
+  {
+   "amount_min": 160,
+   "amount_max": 94,
+   "n": 2
+  },
+  {
+   "amount_min": 163,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 163,
+   "amount_max": 76,
+   "n": 1
+  },
+  {
+   "amount_min": 164,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 165,
+   "amount_max": 29,
+   "n": 1
+  },
+  {
+   "amount_min": 166,
+   "amount_max": 7,
+   "n": 1
+  },
+  {
+   "amount_min": 168,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 168,
+   "amount_max": 81,
+   "n": 1
+  },
+  {
+   "amount_min": 172,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 184,
+   "amount_max": 55,
+   "n": 1
+  },
+  {
+   "amount_min": 188,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 190,
+   "amount_max": 35,
+   "n": 1
+  },
+  {
+   "amount_min": 190,
+   "amount_max": 45,
+   "n": 1
+  },
+  {
+   "amount_min": 190,
+   "amount_max": 89,
+   "n": 2
+  },
+  {
+   "amount_min": 191,
+   "amount_max": 77,
+   "n": 1
+  },
+  {
+   "amount_min": 192,
+   "amount_max": 29,
+   "n": 1
+  },
+  {
+   "amount_min": 192,
+   "amount_max": 66,
+   "n": 1
+  },
+  {
+   "amount_min": 195,
+   "amount_max": 9,
+   "n": 2
+  },
+  {
+   "amount_min": 201,
+   "amount_max": 76,
+   "n": 1
+  },
+  {
+   "amount_min": 202,
+   "amount_max": 85,
+   "n": 1
+  },
+  {
+   "amount_min": 216,
+   "amount_max": 30,
+   "n": 1
+  },
+  {
+   "amount_min": 217,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 223,
+   "amount_max": 14,
+   "n": 1
+  },
+  {
+   "amount_min": 223,
+   "amount_max": 60,
+   "n": 1
+  },
+  {
+   "amount_min": 224,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 224,
+   "amount_max": 1,
+   "n": 2
+  },
+  {
+   "amount_min": 230,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 231,
+   "amount_max": 65,
+   "n": 1
+  },
+  {
+   "amount_min": 231,
+   "amount_max": 84,
+   "n": 1
+  },
+  {
+   "amount_min": 238,
+   "amount_max": 2,
+   "n": 1
+  },
+  {
+   "amount_min": 240,
+   "amount_max": 15,
+   "n": 1
+  },
+  {
+   "amount_min": 240,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 241,
+   "amount_max": 50,
+   "n": 1
+  },
+  {
+   "amount_min": 247,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 250,
+   "amount_max": 41,
+   "n": 1
+  },
+  {
+   "amount_min": 251,
+   "amount_max": 4,
+   "n": 1
+  },
+  {
+   "amount_min": 251,
+   "amount_max": 68,
+   "n": 1
+  },
+  {
+   "amount_min": 251,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 252,
+   "amount_max": 97,
+   "n": 1
+  },
+  {
+   "amount_min": 257,
+   "amount_max": 45,
+   "n": 1
+  },
+  {
+   "amount_min": 258,
+   "amount_max": 65,
+   "n": 1
+  },
+  {
+   "amount_min": 264,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 266,
+   "amount_max": 92,
+   "n": 1
+  },
+  {
+   "amount_min": 268,
+   "amount_max": 96,
+   "n": 1
+  },
+  {
+   "amount_min": 268,
+   "amount_max": 98,
+   "n": 1
+  },
+  {
+   "amount_min": 269,
+   "amount_max": 33,
+   "n": 1
+  },
+  {
+   "amount_min": 282,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 285,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 288,
+   "amount_max": 4,
+   "n": 1
+  },
+  {
+   "amount_min": 288,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 295,
+   "amount_max": 26,
+   "n": 1
+  },
+  {
+   "amount_min": 299,
+   "amount_max": 14,
+   "n": 1
+  },
+  {
+   "amount_min": 309,
+   "amount_max": 77,
+   "n": 1
+  },
+  {
+   "amount_min": 314,
+   "amount_max": 30,
+   "n": 1
+  },
+  {
+   "amount_min": 317,
+   "amount_max": 81,
+   "n": 1
+  },
+  {
+   "amount_min": 318,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 319,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 321,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 324,
+   "amount_max": 38,
+   "n": 1
+  },
+  {
+   "amount_min": 325,
+   "amount_max": 99,
+   "n": 1
+  },
+  {
+   "amount_min": 328,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 330,
+   "amount_max": 51,
+   "n": 1
+  },
+  {
+   "amount_min": 331,
+   "amount_max": 46,
+   "n": 1
+  },
+  {
+   "amount_min": 336,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 342,
+   "amount_max": 19,
+   "n": 1
+  },
+  {
+   "amount_min": 344,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 346,
+   "amount_max": 92,
+   "n": 1
+  },
+  {
+   "amount_min": 348,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 348,
+   "amount_max": 79,
+   "n": 1
+  },
+  {
+   "amount_min": 348,
+   "amount_max": 94,
+   "n": 1
+  },
+  {
+   "amount_min": 350,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 350,
+   "amount_max": 78,
+   "n": 1
+  },
+  {
+   "amount_min": 354,
+   "amount_max": 20,
+   "n": 2
+  },
+  {
+   "amount_min": 355,
+   "amount_max": 95,
+   "n": 1
+  },
+  {
+   "amount_min": 360,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 360,
+   "amount_max": 40,
+   "n": 2
+  },
+  {
+   "amount_min": 363,
+   "amount_max": 90,
+   "n": 1
+  },
+  {
+   "amount_min": 366,
+   "amount_max": 8,
+   "n": 1
+  },
+  {
+   "amount_min": 368,
+   "amount_max": 78,
+   "n": 1
+  },
+  {
+   "amount_min": 369,
+   "amount_max": 93,
+   "n": 2
+  },
+  {
+   "amount_min": 371,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 378,
+   "amount_max": 24,
+   "n": 1
+  },
+  {
+   "amount_min": 378,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 383,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 387,
+   "amount_max": 85,
+   "n": 2
+  },
+  {
+   "amount_min": 390,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 399,
+   "amount_max": 36,
+   "n": 1
+  },
+  {
+   "amount_min": 403,
+   "amount_max": 92,
+   "n": 1
+  },
+  {
+   "amount_min": 404,
+   "amount_max": 76,
+   "n": 1
+  },
+  {
+   "amount_min": 405,
+   "amount_max": 32,
+   "n": 1
+  },
+  {
+   "amount_min": 405,
+   "amount_max": 84,
+   "n": 1
+  },
+  {
+   "amount_min": 405,
+   "amount_max": 92,
+   "n": 1
+  },
+  {
+   "amount_min": 412,
+   "amount_max": 57,
+   "n": 1
+  },
+  {
+   "amount_min": 412,
+   "amount_max": 82,
+   "n": 1
+  },
+  {
+   "amount_min": 415,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 418,
+   "amount_max": 83,
+   "n": 1
+  },
+  {
+   "amount_min": 420,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 420,
+   "amount_max": 30,
+   "n": 1
+  },
+  {
+   "amount_min": 422,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 422,
+   "amount_max": 95,
+   "n": 1
+  },
+  {
+   "amount_min": 423,
+   "amount_max": 87,
+   "n": 1
+  },
+  {
+   "amount_min": 424,
+   "amount_max": 33,
+   "n": 1
+  },
+  {
+   "amount_min": 424,
+   "amount_max": 53,
+   "n": 1
+  },
+  {
+   "amount_min": 428,
+   "amount_max": 62,
+   "n": 1
+  },
+  {
+   "amount_min": 430,
+   "amount_max": 77,
+   "n": 1
+  },
+  {
+   "amount_min": 439,
+   "amount_max": 25,
+   "n": 1
+  },
+  {
+   "amount_min": 439,
+   "amount_max": 99,
+   "n": 2
+  },
+  {
+   "amount_min": 440,
+   "amount_max": 78,
+   "n": 1
+  },
+  {
+   "amount_min": 442,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 442,
+   "amount_max": 95,
+   "n": 1
+  },
+  {
+   "amount_min": 443,
+   "amount_max": 7,
+   "n": 1
+  },
+  {
+   "amount_min": 447,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 455,
+   "amount_max": 71,
+   "n": 1
+  },
+  {
+   "amount_min": 456,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 456,
+   "amount_max": 50,
+   "n": 1
+  },
+  {
+   "amount_min": 456,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 458,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 459,
+   "amount_max": 77,
+   "n": 1
+  },
+  {
+   "amount_min": 460,
+   "amount_max": 82,
+   "n": 1
+  },
+  {
+   "amount_min": 464,
+   "amount_max": 74,
+   "n": 1
+  },
+  {
+   "amount_min": 465,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 468,
+   "amount_max": 43,
+   "n": 1
+  },
+  {
+   "amount_min": 468,
+   "amount_max": 54,
+   "n": 1
+  },
+  {
+   "amount_min": 469,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 470,
+   "amount_max": 99,
+   "n": 1
+  },
+  {
+   "amount_min": 474,
+   "amount_max": 6,
+   "n": 1
+  },
+  {
+   "amount_min": 474,
+   "amount_max": 72,
+   "n": 1
+  },
+  {
+   "amount_min": 476,
+   "amount_max": 63,
+   "n": 1
+  },
+  {
+   "amount_min": 478,
+   "amount_max": 27,
+   "n": 1
+  },
+  {
+   "amount_min": 480,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 482,
+   "amount_max": 9,
+   "n": 1
+  },
+  {
+   "amount_min": 486,
+   "amount_max": 57,
+   "n": 1
+  },
+  {
+   "amount_min": 493,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 494,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 496,
+   "amount_max": 90,
+   "n": 1
+  },
+  {
+   "amount_min": 497,
+   "amount_max": 8,
+   "n": 1
+  },
+  {
+   "amount_min": 500,
+   "amount_max": 45,
+   "n": 1
+  },
+  {
+   "amount_min": 501,
+   "amount_max": 24,
+   "n": 1
+  },
+  {
+   "amount_min": 503,
+   "amount_max": 40,
+   "n": 1
+  },
+  {
+   "amount_min": 505,
+   "amount_max": 24,
+   "n": 1
+  },
+  {
+   "amount_min": 505,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 506,
+   "amount_max": 27,
+   "n": 1
+  },
+  {
+   "amount_min": 509,
+   "amount_max": 87,
+   "n": 1
+  },
+  {
+   "amount_min": 510,
+   "amount_max": 72,
+   "n": 1
+  },
+  {
+   "amount_min": 512,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 524,
+   "amount_max": 78,
+   "n": 1
+  },
+  {
+   "amount_min": 525,
+   "amount_max": 99,
+   "n": 2
+  },
+  {
+   "amount_min": 532,
+   "amount_max": 97,
+   "n": 1
+  },
+  {
+   "amount_min": 534,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 539,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 543,
+   "amount_max": 71,
+   "n": 1
+  },
+  {
+   "amount_min": 551,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 554,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 555,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 567,
+   "amount_max": 58,
+   "n": 1
+  },
+  {
+   "amount_min": 569,
+   "amount_max": 25,
+   "n": 1
+  },
+  {
+   "amount_min": 570,
+   "amount_max": 26,
+   "n": 1
+  },
+  {
+   "amount_min": 572,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 581,
+   "amount_max": 15,
+   "n": 1
+  },
+  {
+   "amount_min": 581,
+   "amount_max": 31,
+   "n": 1
+  },
+  {
+   "amount_min": 581,
+   "amount_max": 86,
+   "n": 1
+  },
+  {
+   "amount_min": 584,
+   "amount_max": 22,
+   "n": 1
+  },
+  {
+   "amount_min": 584,
+   "amount_max": 56,
+   "n": 1
+  },
+  {
+   "amount_min": 587,
+   "amount_max": 26,
+   "n": 1
+  },
+  {
+   "amount_min": 589,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 592,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 601,
+   "amount_max": 50,
+   "n": 1
+  },
+  {
+   "amount_min": 608,
+   "amount_max": 12,
+   "n": 1
+  },
+  {
+   "amount_min": 610,
+   "amount_max": 44,
+   "n": 1
+  },
+  {
+   "amount_min": 612,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 614,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 614,
+   "amount_max": 71,
+   "n": 1
+  },
+  {
+   "amount_min": 614,
+   "amount_max": 78,
+   "n": 1
+  },
+  {
+   "amount_min": 615,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 616,
+   "amount_max": 20,
+   "n": 2
+  },
+  {
+   "amount_min": 616,
+   "amount_max": 59,
+   "n": 1
+  },
+  {
+   "amount_min": 624,
+   "amount_max": 29,
+   "n": 1
+  },
+  {
+   "amount_min": 624,
+   "amount_max": 72,
+   "n": 1
+  },
+  {
+   "amount_min": 629,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 633,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 639,
+   "amount_max": 67,
+   "n": 1
+  },
+  {
+   "amount_min": 644,
+   "amount_max": 37,
+   "n": 1
+  },
+  {
+   "amount_min": 647,
+   "amount_max": 63,
+   "n": 1
+  },
+  {
+   "amount_min": 651,
+   "amount_max": 88,
+   "n": 1
+  },
+  {
+   "amount_min": 652,
+   "amount_max": 28,
+   "n": 2
+  },
+  {
+   "amount_min": 658,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 659,
+   "amount_max": 69,
+   "n": 1
+  },
+  {
+   "amount_min": 663,
+   "amount_max": 86,
+   "n": 1
+  },
+  {
+   "amount_min": 669,
+   "amount_max": 27,
+   "n": 1
+  },
+  {
+   "amount_min": 669,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 674,
+   "amount_max": 96,
+   "n": 1
+  },
+  {
+   "amount_min": 676,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 678,
+   "amount_max": 84,
+   "n": 1
+  },
+  {
+   "amount_min": 681,
+   "amount_max": 76,
+   "n": 2
+  },
+  {
+   "amount_min": 686,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 691,
+   "amount_max": 36,
+   "n": 1
+  },
+  {
+   "amount_min": 700,
+   "amount_max": 12,
+   "n": 1
+  },
+  {
+   "amount_min": 701,
+   "amount_max": 19,
+   "n": 1
+  },
+  {
+   "amount_min": 707,
+   "amount_max": 21,
+   "n": 1
+  },
+  {
+   "amount_min": 712,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 715,
+   "amount_max": 5,
+   "n": 1
+  },
+  {
+   "amount_min": 718,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 721,
+   "amount_max": 28,
+   "n": 1
+  },
+  {
+   "amount_min": 722,
+   "amount_max": 2,
+   "n": 1
+  },
+  {
+   "amount_min": 725,
+   "amount_max": 59,
+   "n": 1
+  },
+  {
+   "amount_min": 737,
+   "amount_max": 20,
+   "n": 1
+  },
+  {
+   "amount_min": 743,
+   "amount_max": 62,
+   "n": 1
+  },
+  {
+   "amount_min": 745,
+   "amount_max": 79,
+   "n": 1
+  },
+  {
+   "amount_min": 746,
+   "amount_max": 43,
+   "n": 1
+  },
+  {
+   "amount_min": 754,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 756,
+   "amount_max": 48,
+   "n": 1
+  },
+  {
+   "amount_min": 762,
+   "amount_max": 12,
+   "n": 1
+  },
+  {
+   "amount_min": 766,
+   "amount_max": 25,
+   "n": 1
+  },
+  {
+   "amount_min": 767,
+   "amount_max": 5,
+   "n": 1
+  },
+  {
+   "amount_min": 770,
+   "amount_max": 32,
+   "n": 1
+  },
+  {
+   "amount_min": 774,
+   "amount_max": 44,
+   "n": 1
+  },
+  {
+   "amount_min": 778,
+   "amount_max": 9,
+   "n": 1
+  },
+  {
+   "amount_min": 781,
+   "amount_max": 64,
+   "n": 1
+  },
+  {
+   "amount_min": 791,
+   "amount_max": 84,
+   "n": 1
+  },
+  {
+   "amount_min": 800,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 800,
+   "amount_max": 43,
+   "n": 1
+  },
+  {
+   "amount_min": 802,
+   "amount_max": 14,
+   "n": 1
+  },
+  {
+   "amount_min": 805,
+   "amount_max": 35,
+   "n": 1
+  },
+  {
+   "amount_min": 816,
+   "amount_max": 61,
+   "n": 1
+  },
+  {
+   "amount_min": 819,
+   "amount_max": 48,
+   "n": 1
+  },
+  {
+   "amount_min": 820,
+   "amount_max": 31,
+   "n": 1
+  },
+  {
+   "amount_min": 823,
+   "amount_max": 45,
+   "n": 1
+  },
+  {
+   "amount_min": 826,
+   "amount_max": 80,
+   "n": 1
+  },
+  {
+   "amount_min": 833,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 833,
+   "amount_max": 71,
+   "n": 1
+  },
+  {
+   "amount_min": 835,
+   "amount_max": 94,
+   "n": 1
+  },
+  {
+   "amount_min": 836,
+   "amount_max": 72,
+   "n": 1
+  },
+  {
+   "amount_min": 836,
+   "amount_max": 89,
+   "n": 1
+  },
+  {
+   "amount_min": 843,
+   "amount_max": 79,
+   "n": 1
+  },
+  {
+   "amount_min": 848,
+   "amount_max": 58,
+   "n": 1
+  },
+  {
+   "amount_min": 848,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 848,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 860,
+   "amount_max": 95,
+   "n": 1
+  },
+  {
+   "amount_min": 876,
+   "amount_max": 76,
+   "n": 1
+  },
+  {
+   "amount_min": 879,
+   "amount_max": 89,
+   "n": 1
+  },
+  {
+   "amount_min": 888,
+   "amount_max": 1,
+   "n": 1
+  },
+  {
+   "amount_min": 894,
+   "amount_max": 97,
+   "n": 1
+  },
+  {
+   "amount_min": 896,
+   "amount_max": 59,
+   "n": 1
+  },
+  {
+   "amount_min": 897,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 898,
+   "amount_max": 16,
+   "n": 1
+  },
+  {
+   "amount_min": 902,
+   "amount_max": 42,
+   "n": 1
+  },
+  {
+   "amount_min": 903,
+   "amount_max": 36,
+   "n": 1
+  },
+  {
+   "amount_min": 905,
+   "amount_max": 44,
+   "n": 1
+  },
+  {
+   "amount_min": 909,
+   "amount_max": 75,
+   "n": 1
+  },
+  {
+   "amount_min": 913,
+   "amount_max": 23,
+   "n": 1
+  },
+  {
+   "amount_min": 914,
+   "amount_max": 2,
+   "n": 1
+  },
+  {
+   "amount_min": 916,
+   "amount_max": 99,
+   "n": 1
+  },
+  {
+   "amount_min": 937,
+   "amount_max": 42,
+   "n": 1
+  },
+  {
+   "amount_min": 955,
+   "amount_max": 10,
+   "n": 1
+  },
+  {
+   "amount_min": 962,
+   "amount_max": 54,
+   "n": 1
+  },
+  {
+   "amount_min": 962,
+   "amount_max": 57,
+   "n": 1
+  },
+  {
+   "amount_min": 971,
+   "amount_max": 25,
+   "n": 2
+  },
+  {
+   "amount_min": 975,
+   "amount_max": 51,
+   "n": 1
+  },
+  {
+   "amount_min": 975,
+   "amount_max": 70,
+   "n": 1
+  },
+  {
+   "amount_min": 976,
+   "amount_max": 45,
+   "n": 1
+  },
+  {
+   "amount_min": 977,
+   "amount_max": 42,
+   "n": 1
+  },
+  {
+   "amount_min": 982,
+   "amount_max": 18,
+   "n": 2
+  },
+  {
+   "amount_min": 985,
+   "amount_max": 47,
+   "n": 1
+  },
+  {
+   "amount_min": 985,
+   "amount_max": 93,
+   "n": 1
+  },
+  {
+   "amount_min": 995,
+   "amount_max": 52,
+   "n": 1
+  },
+  {
+   "amount_min": 996,
+   "amount_max": 91,
+   "n": 1
+  },
+  {
+   "amount_min": 997,
+   "amount_max": 95,
+   "n": 1
+  },
+  {
+   "amount_min": 998,
+   "amount_max": 90,
+   "n": 1
+  },
+  {
+   "amount_min": 999,
+   "amount_max": 64,
+   "n": 1
+  },
+  {
+   "amount_min": 1000,
+   "amount_max": 22,
+   "n": 1
+  },
+  {
+   "amount_min": 1001,
+   "amount_max": 15000,
+   "n": 39739
+  },
+  {
+   "amount_min": 1118,
+   "amount_max": 7,
+   "n": 1
+  },
+  {
+   "amount_min": 1140,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 1280,
+   "amount_max": 3,
+   "n": 1
+  },
+  {
+   "amount_min": 2000,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 2722,
+   "amount_max": 50,
+   "n": 1
+  },
+  {
+   "amount_min": 15001,
+   "amount_max": 50000,
+   "n": 9765
+  },
+  {
+   "amount_min": 50001,
+   "amount_max": 100000,
+   "n": 2969
+  },
+  {
+   "amount_min": 100001,
+   "amount_max": 250000,
+   "n": 2410
+  },
+  {
+   "amount_min": 250001,
+   "amount_max": 500000,
+   "n": 1109
+  },
+  {
+   "amount_min": 375000,
+   "amount_max": 0,
+   "n": 1
+  },
+  {
+   "amount_min": 500001,
+   "amount_max": 1000000,
+   "n": 636
+  },
+  {
+   "amount_min": 1000001,
+   "amount_max": 5000000,
+   "n": 197
+  },
+  {
+   "amount_min": 5000001,
+   "amount_max": 25000000,
+   "n": 56
+  },
+  {
+   "amount_min": 25000001,
+   "amount_max": 50000000,
+   "n": 5
+  },
+  {
+   "amount_min": 50000001,
+   "amount_max": 50000001,
+   "n": 1
+  }
+ ],
+ "owner": [
+  {
+   "o": "self",
+   "n": 24556
+  },
+  {
+   "o": "joint",
+   "n": 17090
+  },
+  {
+   "o": "spouse",
+   "n": 13940
+  },
+  {
+   "o": "child",
+   "n": 1676
+  }
+ ],
+ "monthly24": [
+  {
+   "m": "2024-10",
+   "n": 68
+  },
+  {
+   "m": "2024-11",
+   "n": 237
+  },
+  {
+   "m": "2024-12",
+   "n": 195
+  },
+  {
+   "m": "2025-01",
+   "n": 251
+  },
+  {
+   "m": "2025-02",
+   "n": 517
+  },
+  {
+   "m": "2025-03",
+   "n": 559
+  },
+  {
+   "m": "2025-04",
+   "n": 812
+  },
+  {
+   "m": "2025-05",
+   "n": 1017
+  },
+  {
+   "m": "2025-06",
+   "n": 615
+  },
+  {
+   "m": "2025-07",
+   "n": 317
+  },
+  {
+   "m": "2025-08",
+   "n": 1251
+  },
+  {
+   "m": "2025-09",
+   "n": 767
+  },
+  {
+   "m": "2025-10",
+   "n": 660
+  },
+  {
+   "m": "2025-11",
+   "n": 805
+  },
+  {
+   "m": "2025-12",
+   "n": 429
+  },
+  {
+   "m": "2026-01",
+   "n": 703
+  },
+  {
+   "m": "2026-02",
+   "n": 424
+  },
+  {
+   "m": "2026-03",
+   "n": 427
+  },
+  {
+   "m": "2026-04",
+   "n": 414
+  },
+  {
+   "m": "2026-05",
+   "n": 365
+  },
+  {
+   "m": "2026-06",
+   "n": 411
+  },
+  {
+   "m": "2026-07",
+   "n": 664
+  },
+  {
+   "m": "2026-08",
+   "n": 429
+  },
+  {
+   "m": "2026-09",
+   "n": 458
+  },
+  {
+   "m": "2026-10",
+   "n": 24
+  }
+ ],
+ "sectors": [
+  {
+   "s": "Unclassified",
+   "n": 44349
+  },
+  {
+   "s": "Bonds & Treasuries",
+   "n": 7691
+  },
+  {
+   "s": "Funds & ETFs",
+   "n": 2727
+  },
+  {
+   "s": "Private & other",
+   "n": 1272
+  },
+  {
+   "s": "Options",
+   "n": 1113
+  },
+  {
+   "s": "Crypto",
+   "n": 110
+  }
+ ],
+ "perf": {
+  "n": 21526,
+  "ret": 9.3,
+  "excess": 0,
+  "x": 82.6
+ },
+ "states": [
+  {
+   "state": "NJ",
+   "n": 7280
+  },
+  {
+   "state": "CA",
+   "n": 5795
+  },
+  {
+   "state": "FL",
+   "n": 4585
+  },
+  {
+   "state": "TX",
+   "n": 4384
+  },
+  {
+   "state": "GA",
+   "n": 2816
+  },
+  {
+   "state": "MI",
+   "n": 2811
+  },
+  {
+   "state": "NY",
+   "n": 2413
+  },
+  {
+   "state": "NC",
+   "n": 1974
+  },
+  {
+   "state": "OK",
+   "n": 1890
+  },
+  {
+   "state": "PA",
+   "n": 1686
+  }
+ ],
+ "noTicker": {
+  "n": 9696,
+  "t": 57262
+ },
+ "bands": [
+  {
+   "b": "$1K–$15K",
+   "n": 39744
+  },
+  {
+   "b": "$15K–$50K",
+   "n": 9765
+  },
+  {
+   "b": "$50K–$100K",
+   "n": 2969
+  },
+  {
+   "b": "$100K–$250K",
+   "n": 2410
+  },
+  {
+   "b": "$250K–$500K",
+   "n": 1110
+  },
+  {
+   "b": "$500K–$1M",
+   "n": 636
+  },
+  {
+   "b": "$1M–$5M",
+   "n": 197
+  },
+  {
+   "b": "$5M–$25M",
+   "n": 56
+  },
+  {
+   "b": "$25M–$50M",
+   "n": 5
+  },
+  {
+   "b": "$50M+",
+   "n": 1
+  }
+ ],
+ "perMember": {
+  "House": 168,
+  "Senate": 145
+ },
+ "ownerByChamber": {
+  "House": {
+   "spouse": 9828,
+   "joint": 12883,
+   "self": 22027
+  },
+  "Senate": {
+   "spouse": 4112,
+   "joint": 4207,
+   "self": 2529
+  }
+ },
+ "last90": 1397,
+ "activePols12m": 128,
+ "top2025": [
+  [
+   "AAPL",
+   45
+  ],
+  [
+   "MSFT",
+   43
+  ],
+  [
+   "AMZN",
+   33
+  ],
+  [
+   "NVDA",
+   32
+  ],
+  [
+   "GOOGL",
+   29
+  ],
+  [
+   "PG",
+   27
+  ],
+  [
+   "UNH",
+   27
+  ],
+  [
+   "JPM",
+   26
+  ]
+ ]
+}
