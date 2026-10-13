@@ -11,6 +11,8 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const today = new Date().toISOString().slice(0, 10);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const words = (html) => html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+const clip = (s, n) => { s = String(s).replace(/\s+/g, " ").trim(); if (s.length <= n) return s; const cut = s.slice(0, n - 1); return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\-–]$/, "") + "…"; };
+const seoTitle = (a) => { const full = `${a.title} | ${BRAND}`; return full.length <= 62 ? full : `${a.short} | ${BRAND}`; };
 const fmtDate = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
 const ICONS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -34,7 +36,8 @@ const header = (active) => `<header class="site-header">
   </div>
 </header>`;
 
-const footer = () => `<footer class="site-footer">
+const footer = () => `<div class="cookie" id="cookie" hidden><span>We use cookies for analytics and, where shown, advertising. See our <a href="/privacy/">Privacy Policy</a>.</span><button type="button" id="cookie-ok" class="btn sm">OK</button></div>
+<footer class="site-footer">
   <div class="wrap">
     <a class="brand fb" href="/"><img src="/assets/logo.svg" width="40" height="40" alt="${BRAND} logo"><span class="bw"><span class="bt"><span class="b1">Hill</span><b class="b2">radar</b> <em class="ai">AI</em></span><span class="tag">Congress trades, on your radar.</span></span></a>
     <div class="social" aria-label="Follow ${BRAND}">
@@ -105,7 +108,7 @@ for (const a of articles) {
     ...(a.faq?.length ? [{ "@type": "FAQPage", mainEntity: a.faq.map(([q, ans]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: ans.replace(/<[^>]+>/g, "") } })) }] : []),
   ] };
   const rel = related(a);
-  const html = `${head({ title: `${a.title} | ${BRAND}`, desc: a.desc, url, image, ld })}
+  const html = `${head({ title: seoTitle(a), desc: clip(a.desc, 155), url, image, ld })}
 ${header("blog")}
 <main class="wrap article">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › <span>${esc(a.short ?? a.title)}</span></nav>
@@ -145,7 +148,7 @@ function card(a) {
     { "@type": "Blog", "@id": `${url}#blog`, url, name: `${BRAND} Blog`, publisher: { "@id": `${SITE}/#org` }, blogPost: sorted.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/blog/${a.slug}/`, datePublished: a.date, image: `${SITE}/assets/blog/${a.slug}.jpg` })) },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE + "/" }, { "@type": "ListItem", position: 2, name: "Blog", item: url }] },
   ] };
-  const html = `${head({ title: `Congress Stock Trading Blog: Guides & Data | ${BRAND}`, desc: "Plain-English guides and data stories about STOCK Act disclosures: how to read filings, who trades the most, which stocks Congress holds, late filings and how alerts work.", url, image: `${SITE}/assets/og-image.png`, ld, type: "website" })}
+  const html = `${head({ title: `Congress Stock Trading Blog: Guides & Data | ${BRAND}`, desc: "Guides and data stories on STOCK Act disclosures: how to read filings, who trades most, which stocks Congress holds, late filings and alerts.", url, image: `${SITE}/assets/og-image.jpg`, ld, type: "website" })}
 ${header("blog")}
 <main class="wrap">
   <section class="bhero">

@@ -109,6 +109,24 @@
     if (url === "") a.style.display = "none"; else if (url) a.href = url;
   });
 
+  // mobile sticky CTA: appears after the hero scrolls out, hidden again near the final CTA
+  var sticky = $("#sticky-cta");
+  if (sticky) {
+    document.body.classList.add("has-sticky");
+    var hero = $(".hero"), fin = $(".final"), lastShow = false;
+    var onScroll = function () {
+      var heroGone = hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 500;
+      var finVisible = fin ? fin.getBoundingClientRect().top < window.innerHeight : false;
+      var show = heroGone && !finVisible;
+      if (show !== lastShow) { sticky.classList.toggle("show", show); sticky.setAttribute("aria-hidden", show ? "false" : "true"); lastShow = show; }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  }
+  // cookie notice (once per browser)
+  var ck = $("#cookie");
+  if (ck) { var seen = false; try { seen = localStorage.getItem("hr_cookie_ok") === "1"; } catch (e) {}
+    if (!seen) { ck.hidden = false; $("#cookie-ok").addEventListener("click", function () { ck.hidden = true; try { localStorage.setItem("hr_cookie_ok", "1"); } catch (e) {} }); } }
+
   // footer year
   setAll("data-year", null, String(new Date().getFullYear()));
 

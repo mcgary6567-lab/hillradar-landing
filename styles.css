@@ -230,3 +230,18 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 .related h2 { font-size: 1.3rem; margin-bottom: 14px; }
 .nav a.on { color: var(--gold); }
 @media (max-width: 700px) { .toc ol { columns: 1; } .dt { display: block; overflow-x: auto; } .cta-box .btns { margin-left: 0; } .prose { font-size: 1rem; } }
+
+/* ---------- tap targets, sticky CTA, cookie notice ---------- */
+.site-footer nav a, .crumbs a, .toc a, .faq .more a { display: inline-block; padding: 6px 2px; min-height: 24px; }
+.site-footer nav { gap: 2px 12px; }
+.sticky-cta { display: none; }
+.cookie { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; font-size: .88rem; color: #c3ccdd; box-shadow: 0 20px 60px rgba(0,0,0,.4); max-width: 720px; margin: 0 auto; }
+.cookie[hidden] { display: none; }
+.cookie .btn { padding: 8px 14px; }
+@media (max-width: 700px) {
+  .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,15,28,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--line); font-size: .85rem; color: var(--mute); transform: translateY(110%); transition: transform .25s; }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta .btn { white-space: nowrap; }
+  body.has-sticky { padding-bottom: 64px; }
+  .cookie { bottom: 72px; }
+}
