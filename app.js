@@ -103,6 +103,12 @@
       .then(function () { if (timer) clearTimeout(timer); clearSkeletons(); });
   }
 
+  // social links from config.js (hide a button when its URL is empty)
+  $$("[data-social]").forEach(function (a) {
+    var key = "SOCIAL_" + a.getAttribute("data-social").toUpperCase(), url = CFG[key];
+    if (url === "") a.style.display = "none"; else if (url) a.href = url;
+  });
+
   // footer year
   setAll("data-year", null, String(new Date().getFullYear()));
 

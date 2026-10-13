@@ -1,0 +1,22 @@
+# Hillradar AI
+
+> Hillradar AI (https://hillradar.com) is a public-records research tool that tracks the stock trades US senators and representatives are legally required to disclose under the STOCK Act. It turns Periodic Transaction Reports into a searchable database with lawmaker profiles, company views, activity clusters and alerts. It is independent, non-partisan, not affiliated with the US Government, and provides no financial advice.
+
+## Key facts
+- Coverage: every disclosed congressional stock trade since 2014 (57,000+ filings, 350+ lawmakers, 9,000+ companies and assets), refreshed several times a day.
+- Sources: official House Clerk and Senate eFD disclosure filings via open datasets, plus the official congress-legislators directory for names, parties, chambers, states and photos.
+- Amounts are the ranges lawmakers report (e.g. $15,001–$50,000); the law allows up to 45 days to file after a trade and late filings are marked.
+- Plans: Free (last 30 days of filings, profiles, 1 watchlist item). Pro: $497 per year (full history, AI Scanning of activity clusters with plain-English reasons, Investment Plan back-test and calculator, Telegram/WhatsApp/email alerts, unlimited watchlist, CSV export). 14-day refund on a first Pro payment.
+- Audience: journalists, researchers, voters, compliance teams and self-directed investors who want the primary source.
+- Contact: info@hillradar.com
+
+## Pages
+- [Home](https://hillradar.com/): what the site does, live latest filings, features, pricing.
+- [Help Center & FAQ](https://hillradar.com/faq.html): 40+ answers on data sources, accuracy, AI Scanning, plans, alerts, the installable app, account security and legal questions.
+- [Contact](https://hillradar.com/contact.html)
+- [Terms & Conditions](https://hillradar.com/terms.html)
+- [Privacy Policy](https://hillradar.com/privacy.html)
+- [Disclaimer](https://hillradar.com/disclaimer.html): not financial advice; known limitations of disclosure data.
+
+## App
+- The application itself (sign-in required) runs at https://hillradar-ai.fly.dev
