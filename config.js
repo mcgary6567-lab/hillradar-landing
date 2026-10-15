@@ -10,6 +10,5 @@ window.LANDING_CONFIG = {
   GOOGLE_ADS_ID: "",
   GOOGLE_ADS_SIGNUP_LABEL: "",
   // social profiles shown in the footer (leave "" to hide one)
-  SOCIAL_X: "https://x.com/hillradarai",
-  SOCIAL_LINKEDIN: "https://www.linkedin.com/company/hillradarai"
+  SOCIAL_X: "https://x.com/hillradarai"
 };
