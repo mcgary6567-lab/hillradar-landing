@@ -1,0 +1,6 @@
+# Internal planning docs — never index. Keep them out of search and AI crawls
+# so they can't dilute the site's topical focus or leak strategy.
+Options -Indexes
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

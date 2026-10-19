@@ -1,6 +1,7 @@
 # Hillradar AI — public-records site. Everyone welcome, including AI crawlers.
 User-agent: *
 Allow: /
+Disallow: /docs/
 
 User-agent: GPTBot
 Allow: /
