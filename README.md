@@ -28,3 +28,11 @@ Final URL: the root of this domain. Links to sign-up keep `?plan=` and `utm_*` p
 Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build with `node tools/build-blog.mjs`
 (writes `/blog/`, `sitemap.xml`, the blog section of `llms.txt`) and `node tools/render-heroes.mjs` for the hero images.
 `.htaccess` gives clean URLs and 301s from the old `.html` paths on Apache hosts such as Hostinger.
+
+## Social card (Open Graph / Twitter)
+`assets/og-image.jpg` (and the `.png` copy the exported FAQ / legal pages use) is the 1200x630 preview shown when any page
+is shared on X, Facebook, LinkedIn, WhatsApp, Telegram or Slack. Rebuild it after `tools/data.json` changes with
+`node tools/render-og.mjs` (needs Playwright + Chromium, same as the hero images). The home page's `og:title`,
+`og:description` and `twitter:*` tags are in `index.html`. After changing the image bump `?v=` on the `og:image` URLs
+and re-scrape at https://developers.facebook.com/tools/debug/ and https://www.linkedin.com/post-inspector/ so the old
+preview is dropped from their caches.
