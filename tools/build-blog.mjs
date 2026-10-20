@@ -93,7 +93,7 @@ ${footer()}
 
 // ---------- sitemap + llms ----------
 {
-  const pages = [["", "1.0", "weekly"], ["blog/", "0.9", "weekly"], ...articles.map((a) => [`blog/${a.slug}/`, "0.8", "monthly"]), ["congress/", "0.8", "weekly"], ...lawmakers.map((l) => [`congress/${l.slug}/`, "0.7", "monthly"]), ["faq/", "0.8", "monthly"], ["contact/", "0.5", "yearly"], ["disclaimer/", "0.4", "yearly"], ["terms/", "0.3", "yearly"], ["privacy/", "0.3", "yearly"]];
+  const pages = [["", "1.0", "weekly"], ["blog/", "0.9", "weekly"], ...articles.map((a) => [`blog/${a.slug}/`, "0.8", "monthly"]), ["congress/", "0.8", "weekly"], ...lawmakers.map((l) => [`congress/${l.slug}/`, "0.7", "monthly"]), ["press/", "0.6", "monthly"], ["faq/", "0.8", "monthly"], ["contact/", "0.5", "yearly"], ["disclaimer/", "0.4", "yearly"], ["terms/", "0.3", "yearly"], ["privacy/", "0.3", "yearly"]];
   fs.writeFileSync(path.join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
     pages.map(([u, pr, cf]) => { const a = articles.find((x) => `blog/${x.slug}/` === u); return `  <url><loc>${SITE}/${u}</loc><lastmod>${a?.updated ?? a?.date ?? today}</lastmod><changefreq>${cf}</changefreq><priority>${pr}</priority>${a ? `<image:image><image:loc>${SITE}/assets/blog/${a.slug}.jpg</image:loc><image:title>${esc(a.title)}</image:title></image:image>` : ""}</url>`; }).join("\n") + "\n</urlset>\n");
   const llms = fs.readFileSync(path.join(root, "llms.txt"), "utf8").split("\n## Blog")[0].trimEnd();

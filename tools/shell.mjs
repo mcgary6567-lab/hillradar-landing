@@ -40,7 +40,7 @@ export const footer = () => `<div class="cookie" id="cookie" hidden><span>We use
     </div>
     <span>© <span data-year>${today.slice(0, 4)}</span> <span data-company>${BRAND}</span></span>
     <nav>
-      <a href="/congress/">Lawmakers</a><a href="/blog/">Blog</a><a href="/faq/">Help &amp; FAQ</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><a href="/disclaimer/">Disclaimer</a><a href="/contact/">Contact</a><a data-mail href="mailto:info@hillradar.com">info@hillradar.com</a>
+      <a href="/congress/">Lawmakers</a><a href="/blog/">Blog</a><a href="/press/">Press</a><a href="/faq/">Help &amp; FAQ</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><a href="/disclaimer/">Disclaimer</a><a href="/contact/">Contact</a><a data-mail href="mailto:info@hillradar.com">info@hillradar.com</a>
     </nav>
   </div>
 </footer>
