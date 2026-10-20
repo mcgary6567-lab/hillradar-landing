@@ -247,3 +247,16 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 }
 .cookie button { background: transparent; color: var(--ink); cursor: pointer; font: inherit; }
 .cookie button:hover { border-color: var(--gold); color: var(--gold); }
+
+/* lawmaker pages */
+.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0 4px; }
+.lwtable { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 640px; }
+.lwtable th, .lwtable td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.lwtable thead th { font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; color: var(--mute); font-weight: 700; }
+.lwtable tbody tr:hover { background: rgba(255,255,255,.03); }
+.lwtable td a { font-weight: 700; color: var(--ink); }
+.lwtable td a:hover { color: var(--gold); }
+.lwtable .rk { color: var(--mute); font-family: ui-monospace, Menlo, monospace; }
+.lwtable .tr { text-align: right; font-family: ui-monospace, Menlo, monospace; }
+.post.lw .pb { padding: 16px 18px; }
+.post.lw h3 { color: var(--gold); }

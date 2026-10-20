@@ -32,3 +32,21 @@
 - [How to get alerts when a member of Congress files a stock trade](https://hillradar.com/blog/how-to-get-alerts-for-congress-stock-trades/): A step-by-step guide to being told the moment a congressional trade is disclosed: choosing who to follow, connecting Telegram, WhatsApp or email, and what an alert actually contains.
 - [What is a congressional trading cluster, and how AI Scanning finds one](https://hillradar.com/blog/what-is-a-congressional-trading-cluster/): When several members of Congress file trades in the same company within a few weeks, that is a cluster. Here is how Hillradar AI detects and scores them, what the back-test shows, and the caveats that come with it.
 - [House vs Senate: how congressional stock trade disclosures differ](https://hillradar.com/blog/house-vs-senate-stock-trade-disclosures/): The two chambers file under the same law but produce very different records: 46,096 House transactions against 11,166 in the Senate, different speeds, different owner patterns and different file formats.
+
+## Lawmakers
+- [Congress stock trades by lawmaker](https://hillradar.com/congress/): the most active disclosed traders since 2014.
+- [Thomas MacArthur stock trades](https://hillradar.com/congress/thomas-macarthur/): 3267 disclosed trades (1707 buys, 1560 sells), Republican Representative from NJ, 2015–2019.
+- [Josh Gottheimer stock trades](https://hillradar.com/congress/josh-gottheimer/): 3249 disclosed trades (1361 buys, 1888 sells), Democrat Representative from NJ, 2017–2026.
+- [Gilbert Ray Cisneros Jr. stock trades](https://hillradar.com/congress/gilbert-ray-cisneros-jr/): 2500 disclosed trades (1456 buys, 1044 sells), Democrat Representative from CA, 2019–2026.
+- [David Perdue stock trades](https://hillradar.com/congress/david-perdue/): 1511 disclosed trades (757 buys, 754 sells), Republican Senator from GA, 2015–2020.
+- [Lisa C. McClain stock trades](https://hillradar.com/congress/lisa-c-mcclain/): 1399 disclosed trades (707 buys, 692 sells), Republican Representative from MI, 2024–2026.
+- [Daniel S. Goldman stock trades](https://hillradar.com/congress/daniel-s-goldman/): 1196 disclosed trades (353 buys, 843 sells), Democrat Representative from NY, 2023–2025.
+- [Lois Frankel stock trades](https://hillradar.com/congress/lois-frankel/): 1173 disclosed trades (548 buys, 625 sells), Democrat Representative from FL, 2014–2023.
+- [Alan S. Lowenthal stock trades](https://hillradar.com/congress/alan-s-lowenthal/): 1168 disclosed trades (557 buys, 611 sells), Democrat Representative from CA, 2014–2022.
+- [Tommy Tuberville stock trades](https://hillradar.com/congress/tommy-tuberville/): 1150 disclosed trades (486 buys, 664 sells), Republican Senator from AL, 2021–2026.
+- [Thomas R. Carper stock trades](https://hillradar.com/congress/thomas-r-carper/): 1087 disclosed trades (571 buys, 516 sells), Democrat Senator from DE, 2014–2024.
+- [Susie Lee stock trades](https://hillradar.com/congress/susie-lee/): 1057 disclosed trades (524 buys, 533 sells), Democrat Representative from NV, 2019–2026.
+- [K. Michael Conaway stock trades](https://hillradar.com/congress/k-michael-conaway/): 1056 disclosed trades (501 buys, 555 sells), Republican Representative from TX, 2014–2020.
+- [Greg Gianforte stock trades](https://hillradar.com/congress/greg-gianforte/): 1033 disclosed trades (513 buys, 520 sells), Republican Representative from MT, 2017–2020.
+- [Donald S. Beyer Jr. stock trades](https://hillradar.com/congress/donald-s-beyer-jr/): 936 disclosed trades (499 buys, 435 sells), Democrat Representative from VA, 2019–2026.
+- [Dean Phillips stock trades](https://hillradar.com/congress/dean-phillips/): 915 disclosed trades (449 buys, 466 sells), Democrat Representative from MN, 2019–2024.
