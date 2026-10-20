@@ -1,0 +1,14 @@
+[
+  {
+    "_comment": "Hand-curated notable lawmakers not in data.json topLawmakers. Fill with REAL figures from the app DB (see README). Delete this _comment line. Copy entries into extra-lawmakers.json.",
+    "name": "Rep. Nancy Pelosi",
+    "party": "Democrat",
+    "chamber": "House",
+    "state": "CA",
+    "n": 0,
+    "buys": 0,
+    "sells": 0,
+    "first": "YYYY-MM-DD",
+    "last": "YYYY-MM-DD"
+  }
+]

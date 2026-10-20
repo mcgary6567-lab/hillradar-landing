@@ -26,11 +26,38 @@ Final URL: the root of this domain. Links to sign-up keep `?plan=` and `utm_*` p
 
 ## Lawmaker pages
 Per-lawmaker SEO pages at `/congress/<slug>/` (plus the `/congress/` index) target "{name} stock trades"
-searches. Built from `tools/data.json` → `topLawmakers` by `node tools/build-lawmakers.mjs`, then run
+searches. Built from `tools/lawmakers.mjs` by `node tools/build-lawmakers.mjs`, then run
 `node tools/build-blog.mjs` so `sitemap.xml` and `llms.txt` pick them up (build-blog is the sitemap authority).
-Shared header/footer/`<head>` live in `tools/shell.mjs`. To add more lawmakers (e.g. high-search names like
-Pelosi, who isn't in the current export), add them to `data.json` → `topLawmakers` with the same fields and
-re-run both scripts; their pages build automatically.
+Shared header/footer/`<head>` live in `tools/shell.mjs`.
+
+### Adding notable lawmakers (e.g. Nancy Pelosi)
+`tools/data.json` → `topLawmakers` is the *most active by trade count*, exported from the app DB. High-search
+names like Pelosi trade in large amounts but not high frequency, so they are **not** in that list — and their
+numbers must be **real**, never invented. Add them in `tools/extra-lawmakers.json` (a hand-curated array that
+survives `data.json` re-exports; see `tools/extra-lawmakers.example.json` for the shape), then re-run both build
+scripts. `lawmakers.mjs` merges the two sources, de-dupes by slug and re-ranks.
+
+Get the real figures by running this against the app's SQLite DB (`politrade-ai`, `server/src/db.ts` schema):
+
+```sql
+-- one row per lawmaker, in the extra-lawmakers.json shape
+SELECT
+  (CASE p.chamber WHEN 'Senate' THEN 'Sen. ' ELSE 'Rep. ' END) || p.name AS name,
+  p.party, p.chamber, p.state,
+  COUNT(*)                        AS n,
+  SUM(t.tx_type = 'buy')          AS buys,
+  SUM(t.tx_type = 'sell')         AS sells,
+  MIN(t.tx_date)                  AS first,
+  MAX(t.tx_date)                  AS last
+FROM trades t JOIN politicians p ON p.id = t.politician_id
+WHERE p.name LIKE '%Pelosi%'      -- repeat / OR more names, or drop the WHERE for everyone
+GROUP BY p.id
+ORDER BY n DESC;
+```
+
+Run it as `sqlite3 <app.db> ".mode json" "<query>"` to get rows you can paste straight into
+`extra-lawmakers.json` (drop the `name` prefix adjustment if `politicians.name` already includes a title).
+Each record needs: `name`, `party`, `chamber`, `state`, `n`, `buys`, `sells`, `first`, `last`.
 
 ## Blog
 Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build with `node tools/build-blog.mjs`
