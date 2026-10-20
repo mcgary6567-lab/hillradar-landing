@@ -24,9 +24,17 @@ fallback numbers in the HTML stay, so the page never looks broken.
 ## Ads
 Final URL: the root of this domain. Links to sign-up keep `?plan=` and `utm_*` parameters.
 
+## Lawmaker pages
+Per-lawmaker SEO pages at `/congress/<slug>/` (plus the `/congress/` index) target "{name} stock trades"
+searches. Built from `tools/data.json` → `topLawmakers` by `node tools/build-lawmakers.mjs`, then run
+`node tools/build-blog.mjs` so `sitemap.xml` and `llms.txt` pick them up (build-blog is the sitemap authority).
+Shared header/footer/`<head>` live in `tools/shell.mjs`. To add more lawmakers (e.g. high-search names like
+Pelosi, who isn't in the current export), add them to `data.json` → `topLawmakers` with the same fields and
+re-run both scripts; their pages build automatically.
+
 ## Blog
 Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build with `node tools/build-blog.mjs`
-(writes `/blog/`, `sitemap.xml`, the blog section of `llms.txt`) and `node tools/render-heroes.mjs` for the hero images.
+(writes `/blog/`, `/congress/` URLs into `sitemap.xml`, and the blog + lawmaker sections of `llms.txt`) and `node tools/render-heroes.mjs` for the hero images.
 `.htaccess` gives clean URLs and 301s from the old `.html` paths on Apache hosts such as Hostinger.
 
 ## Social card (Open Graph / Twitter)
