@@ -30,34 +30,19 @@ searches. Built from `tools/lawmakers.mjs` by `node tools/build-lawmakers.mjs`, 
 `node tools/build-blog.mjs` so `sitemap.xml` and `llms.txt` pick them up (build-blog is the sitemap authority).
 Shared header/footer/`<head>` live in `tools/shell.mjs`.
 
-### Adding notable lawmakers (e.g. Nancy Pelosi)
-`tools/data.json` → `topLawmakers` is the *most active by trade count*, exported from the app DB. High-search
-names like Pelosi trade in large amounts but not high frequency, so they are **not** in that list — and their
-numbers must be **real**, never invented. Add them in `tools/extra-lawmakers.json` (a hand-curated array that
-survives `data.json` re-exports; see `tools/extra-lawmakers.example.json` for the shape), then re-run both build
-scripts. `lawmakers.mjs` merges the two sources, de-dupes by slug and re-ranks.
+### Getting more lawmakers (the recommended way)
+`lawmakers.mjs` merges three sources, de-duped by slug and re-ranked by trade count:
+1. `data.json` → `topLawmakers` — the original hand-made top-15.
+2. `lawmakers-export.json` — the **app export** (bulk, real data). Generate it from the app repo
+   (`politrade-ai`): `DB_PATH=/path/to/prod.db npx tsx scripts/export-lawmakers.ts <this-checkout> [limit] [minTrades]`
+   (defaults: limit 150, minTrades 20). Lower `minTrades` / raise `limit` to include more names
+   (e.g. Nancy Pelosi, who trades in size but not high frequency).
+3. `extra-lawmakers.json` — hand-curated overrides that win over the bulk export (see
+   `extra-lawmakers.example.json`).
 
-Get the real figures by running this against the app's SQLite DB (`politrade-ai`, `server/src/db.ts` schema):
-
-```sql
--- one row per lawmaker, in the extra-lawmakers.json shape
-SELECT
-  (CASE p.chamber WHEN 'Senate' THEN 'Sen. ' ELSE 'Rep. ' END) || p.name AS name,
-  p.party, p.chamber, p.state,
-  COUNT(*)                        AS n,
-  SUM(t.tx_type = 'buy')          AS buys,
-  SUM(t.tx_type = 'sell')         AS sells,
-  MIN(t.tx_date)                  AS first,
-  MAX(t.tx_date)                  AS last
-FROM trades t JOIN politicians p ON p.id = t.politician_id
-WHERE p.name LIKE '%Pelosi%'      -- repeat / OR more names, or drop the WHERE for everyone
-GROUP BY p.id
-ORDER BY n DESC;
-```
-
-Run it as `sqlite3 <app.db> ".mode json" "<query>"` to get rows you can paste straight into
-`extra-lawmakers.json` (drop the `name` prefix adjustment if `politicians.name` already includes a title).
-Each record needs: `name`, `party`, `chamber`, `state`, `n`, `buys`, `sells`, `first`, `last`.
+Then rebuild: `node tools/build-lawmakers.mjs && node tools/build-blog.mjs`. All figures come from the
+database — **never invent numbers for real lawmakers**. (A page needs `name`, `party`, `chamber`, `state`,
+`n`, `buys`, `sells`, `first`, `last`.)
 
 ## Blog
 Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build with `node tools/build-blog.mjs`
