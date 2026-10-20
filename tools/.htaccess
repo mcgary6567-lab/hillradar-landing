@@ -1,0 +1,13 @@
+# Build scripts and source data — not part of the served site. When the repo is
+# deployed whole (e.g. Hostinger Git), block direct web access and indexing.
+Options -Indexes
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
