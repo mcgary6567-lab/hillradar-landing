@@ -22,6 +22,35 @@ Cluster D is the Pro conversion path — every monitor page should end on an ale
 When targeting a named lawmaker, keep it factual (public figure, public records) and repeat the
 "public records, not financial advice" disclaimer.
 
+### Priority targets — validated with Semrush (US database, Oct 2026)
+
+Real monthly search volume and keyword difficulty (KD, 0–100 = harder). Prioritise **high
+volume + low KD**.
+
+| Keyword | Volume / mo | KD | Intent | Verdict |
+|---|---|---|---|---|
+| nancy pelosi stock tracker | **8,100** | 26 | commercial | **Top opportunity** — high volume, low difficulty. Needs a dedicated lawmaker page. |
+| congress stock tracker | 1,900 | 44 | informational | Head term — target the home page. |
+| congress stock trades | 1,300 | 54 | commercial | Head term — home page (current `<title>` already matches). |
+| stock act | 880 | 61 | informational | Hard; own it via the existing STOCK Act guide. |
+| insider trading congress | 480 | 60 | informational | Blog/explainer angle. |
+| congress stock trades tracker | 210 | 38 | informational | Easy win — home page already ranks-eligible. |
+| pelosi stock trades | 170 | 28 | informational | Low KD — lawmaker page. |
+| track congress stock trades | 170 | 38 | informational | Easy win. |
+| politician stock trades | 170 | 45 | commercial | Home + feature copy. |
+| senator stock trades | 90 | 50 | informational | Secondary head term. |
+| how to track congress stock trades | 110 | 40 | informational | FAQ / how-to (answered on home FAQ now). |
+
+Competitor benchmark: **capitoltrades.com** ranks for ~1,829 organic keywords and ~13,400 monthly
+organic visits (Semrush Rank ~133,822). **unusual whales** pulls 22,200/mo on brand alone (KD 67)
+and **capitol trades** 4,400/mo (KD 51) — both are brand terms, not worth chasing directly.
+hillradar.com currently returns **no Semrush data** (not yet indexed), so these are greenfield
+targets. `tools/data.json` numbers are not from Semrush.
+
+**The one clear takeaway:** the biggest, easiest traffic is **named-lawmaker queries**
+(Pelosi alone is 8,100/mo at KD 26). The home page can't rank for those — they need the
+**per-lawmaker entity pages** in Build 1 below. That is the single highest-ROI build.
+
 ## 2. Data-Dense Landing Copy — Core Tracker Page (196 words)
 
 > **Hillradar AI** tracks every **stock trade** US **senators and representatives** are required to
