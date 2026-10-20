@@ -358,6 +358,38 @@ ${figure(bars({ labels: ["House self", "House joint", "House spouse", "Senate se
 <h2 id="trackers">What this means when you read a tracker</h2>
 ${takeaways([`House numbers dominate any all-Congress statistic; filter by chamber before comparing lawmakers.`, "Senate filings are fresher on average, so a Senate alert is typically a few weeks closer to the trade.", "Most Senate transactions are spouse or joint; most House transactions are the member's own.", "Parsing quality differs by source; a good tracker links every row to its original filing so you can check."])}
 <p>${BRAND} shows chamber, owner and filing delay on every record, and lets you filter by all three. <a href="/signup">Create a free account</a> to compare the two chambers on live data, or read <a href="/blog/congress-45-day-filing-rule-and-late-disclosures/">the full analysis of filing delays</a>.</p>` },
+
+  // 11 ------------------------------------------------------------------
+  { slug: "how-the-stock-act-affects-investors", category: "Explainer", date: PUB, asOf: AS_OF, tags: ["stock-act", "basics", "data"],
+    title: "What the STOCK Act means for everyday investors",
+    short: "The STOCK Act and investors", desc: `What the STOCK Act disclosure record can and cannot tell an investor: ${n(T.trades)} congressional trades, the filing lag, amount ranges, and why it is a transparency tool, not a stock tip.`,
+    heroAlt: "The companies most members of Congress have disclosed trading, led by Apple, Microsoft and Amazon",
+    intro: "The STOCK Act turned Congress's trades into a public dataset anyone can read. Here is what that record is genuinely useful for as an investor, and the three reasons it is a poor shortcut to returns.",
+    faq: [["Can I make money copying congressional stock trades?", `There is no guarantee. By the time a trade is public it is weeks old (the median gap is ${D.delayMedian.m} days and ${pct(LATE, T.trades)} of filings are late), the amount is only a range, and you often cannot tell whether the member, a spouse or an adviser made the decision. The record is a transparency tool, not investment advice.`],
+          ["Are congressional trades a reliable market signal?", `Only weakly. The companies Congress trades most are the same mega-caps most index funds already hold, buys and sells are close to balanced (${pct(BUYS, T.trades, 0)} vs ${pct(SELLS, T.trades, 0)}), and the filing lag removes most of any timing edge.`],
+          ["Is it legal to trade based on these disclosures?", "Yes. The filings are public records published under the STOCK Act, and trading on public information is legal for anyone. Nothing on Hillradar AI is a recommendation to buy or sell."]],
+    body: () => `
+<p>The STOCK Act was written for <strong>transparency</strong>, not for investors. Its side effect, though, is one of the richest public financial datasets anywhere: <strong>${n(T.trades)} disclosed transactions</strong> from <strong>${n(T.pols)} lawmakers</strong> across <strong>${n(T.issuers)} companies and assets</strong>. The question for an investor is a narrow one: what can that record actually tell you, and what can it not?</p>
+<h2 id="holdings">What Congress actually trades</h2>
+${figure(hbars({ label: "Companies traded by the most members of Congress", rows: D.topCompanies.slice(0, 6).map((c) => [`${c.ticker}`, c.pols]), fmt: n }), `Number of distinct lawmakers who have disclosed trading each company, top six, in the ${BRAND} database as of ${AS_OF}.`)}
+<p>The first surprise is how ordinary the list is. The names most members of Congress trade are <strong>Apple</strong>, <strong>Microsoft</strong> and <strong>Amazon</strong>, the same mega-cap stocks that sit at the top of almost every index fund. Congress, in aggregate, is not trading exotic tickers you have never heard of. That alone should temper the idea that the disclosures are a secret watchlist.</p>
+<h2 id="lag">Why the timing works against you</h2>
+${figure(bars({ labels: D.delayBuckets.map((x) => x.b), values: D.delayBuckets.map((x) => x.n), colors: [GOLD], label: "How many days after a trade it was disclosed", legend: [["Days from trade to filing", GOLD]] }), `Disclosure delay across ${n(T.trades)} filings: days between the trade and its public filing. The STOCK Act allows up to 45.`)}
+<p>This is the biggest problem with treating the record as a signal. The median trade is disclosed <strong>${D.delayMedian.m} days</strong> after it happens, <strong>${pct(LATE, T.trades)}</strong> of filings (${n(LATE)}) arrive after the 45-day deadline, and <strong>${n(D.delay.late90)}</strong> land more than 90 days late. By the time a trade is public, whatever information or timing it reflected is usually stale. A disclosure is a piece of history, not a live tip.</p>
+<h2 id="fineprint">What the filing never tells you</h2>
+<p>Even a fresh filing withholds the things an investor would most want to know:</p>
+<ul>
+<li><strong>Not the size.</strong> Amounts are ranges, and ${pct(D.bands[0].n, T.trades, 0)} of all transactions sit in the smallest $1,001–$15,000 band. You cannot tell a token position from a conviction bet.</li>
+<li><strong>Not who decided.</strong> Only ${pct(owner("self"), T.trades, 0)} of transactions are the member's own account; the rest are joint, spouse or dependent-child accounts, many run by a financial adviser the member does not direct.</li>
+<li><strong>Not the price, and not the reason.</strong> There is no entry price, no thesis, and no note on whether a sale was a view on the company or a scheduled rebalance.</li>
+<li><strong>Not final.</strong> Filers can amend reports later, so any single row can move.</li>
+</ul>
+${callout(`<b>The copy-trading trap:</b> "buy what Congress buys" means buying an unknown amount, for an unknown reason, decided by an unknown person, reported weeks after the fact. That is four blind spots stacked on top of each other.`)}
+<h2 id="use">Where it genuinely helps</h2>
+<p>Read as a <strong>transparency and accountability</strong> record rather than a trade feed, the data is valuable:</p>
+${takeaways(["Spotting potential conflicts of interest when a lawmaker trades in a sector they write laws about.", "Checking a company you already follow to see whether members of Congress have been buying or selling it, and when.", "Using a filing as a prompt to go read the primary source and the company's own disclosures, not as a reason to act.", "Following specific lawmakers or tickers for awareness, with alerts, so you learn of a filing when it posts rather than months later."])}
+<h2 id="bottom">The honest bottom line</h2>
+<p>The STOCK Act record is one of the most detailed public windows into a legislature's finances anywhere, and that is exactly its worth: it lets voters, journalists and investors <em>watch</em>. It is not a strategy. ${BRAND} publishes the record, the filing delay and the amount band on every row, and states plainly that nothing here is investment advice. Start with <a href="/blog/what-is-the-stock-act/">what the STOCK Act requires</a>, then <a href="/blog/why-congress-trade-amounts-are-ranges/">why the amounts are ranges</a> and <a href="/blog/congress-45-day-filing-rule-and-late-disclosures/">how late the filings really are</a>.</p>` },
 ];
 
 // longer-form sections appended to every article
