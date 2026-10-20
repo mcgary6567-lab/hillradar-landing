@@ -1,36 +1,38 @@
 /**
  * Lawmaker list for the /congress/ pages.
  *
- * Sources, merged by slug (de-duplicated, re-ranked by trade count):
- *   1. tools/data.json  -> topLawmakers : the most active traders, exported from the app DB.
- *   2. tools/extra-lawmakers.json       : hand-curated notable members (e.g. Nancy Pelosi) who
- *      are NOT in the top-by-count export. This file is NOT overwritten when data.json is
- *      re-exported, so curated pages survive. See tools/extra-lawmakers.example.json for the shape.
+ * Sources, merged by slug (later wins on a tie; de-duplicated, re-ranked by trade count):
+ *   1. tools/data.json       -> topLawmakers : the original most-active export (legacy).
+ *   2. tools/lawmakers-export.json           : the app export (server/scripts/export-lawmakers.ts) —
+ *      the most active traders from the production DB, as many as you ask it for.
+ *   3. tools/extra-lawmakers.json            : hand-curated notable members (e.g. Nancy Pelosi).
+ *      Wins over the bulk export so a manual correction sticks. See extra-lawmakers.example.json.
  *
  * Every record must carry REAL figures from the app database (name, party, chamber, state, n,
- * buys, sells, first, last). Do not invent numbers for real lawmakers — run the query in the
- * README against the app's SQLite DB and paste the result into extra-lawmakers.json.
+ * buys, sells, first, last). Do not invent numbers for real lawmakers.
  */
 import fs from "node:fs";
 import path from "node:path";
 
 const dir = path.dirname(new URL(import.meta.url).pathname);
+const readJson = (f) => { const p = path.join(dir, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : []; };
 const data = JSON.parse(fs.readFileSync(path.join(dir, "data.json"), "utf8"));
-const extraPath = path.join(dir, "extra-lawmakers.json");
-const extra = fs.existsSync(extraPath) ? JSON.parse(fs.readFileSync(extraPath, "utf8")) : [];
+const exported = readJson("lawmakers-export.json");
+const extra = readJson("extra-lawmakers.json");
 
 export const asOf = data.asOf;
 
-const roleOf = (n) => (/^Sen\./.test(n) ? "Senator" : "Representative");
-const cleanName = (n) => n.replace(/^(Rep\.|Sen\.|Del\.)\s+/, "").trim();
+// Role comes from the chamber field (robust whether or not the name carries a "Rep./Sen." title).
+const roleOf = (chamber) => (/senate/i.test(String(chamber)) ? "Senator" : "Representative");
+const cleanName = (n) => String(n).replace(/^(Rep\.|Sen\.|Del\.|Representative|Senator)\s+/i, "").trim();
 const slugify = (n) => cleanName(n).toLowerCase().replace(/[.'’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
 const required = ["name", "party", "chamber", "state", "n", "buys", "sells", "first", "last"];
 const valid = (l) => l && required.every((k) => l[k] !== undefined && l[k] !== null && l[k] !== "");
 
-// Merge: data.json first, then extras (an extra with the same slug overrides).
+// Merge in priority order; a later source with the same slug overrides an earlier one.
 const bySlug = new Map();
-for (const l of [...(data.topLawmakers || []), ...extra]) {
+for (const l of [...(data.topLawmakers || []), ...exported, ...extra]) {
   if (!valid(l)) { if (l && l.name) console.warn(`lawmakers: skipping "${l.name}" — missing required field(s)`); continue; }
   bySlug.set(slugify(l.name), l);
 }
@@ -41,7 +43,7 @@ export const lawmakers = [...bySlug.values()]
     rank: i + 1,
     raw: l.name,
     name: cleanName(l.name),
-    role: roleOf(l.name),
+    role: roleOf(l.chamber),
     slug: slugify(l.name),
     party: l.party,
     chamber: l.chamber,
