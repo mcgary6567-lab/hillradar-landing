@@ -84,7 +84,8 @@
   function renderPopular(rows) {
     var ul = $("#popular"); if (!ul || !rows || !rows.length) return;
     ul.innerHTML = rows.map(function (i) {
-      return '<li><span><span class="tk">' + esc(i.ticker) + '</span> ' + esc(i.name) + '</span><span>' + num(i.pols) + ' lawmakers</span></li>';
+      var logo = i.ticker ? '<img class="clogo" src="https://assets.parqet.com/logos/symbol/' + encodeURIComponent(String(i.ticker).toUpperCase()) + '?format=png" alt="" width="22" height="22" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '';
+      return '<li><span>' + logo + '<span class="tk">' + esc(i.ticker) + '</span> ' + esc(i.name) + '</span><span>' + num(i.pols) + ' lawmakers</span></li>';
     }).join("");
   }
 
