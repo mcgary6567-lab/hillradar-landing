@@ -1,0 +1,29 @@
+name: Diagnose live site
+on:
+  workflow_dispatch: {}
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe hillradar.com
+        run: |
+          set -u
+          SITE=https://hillradar.com
+          API=https://hillradar-ai.fly.dev
+          echo "== homepage: status + which asset versions it references =="
+          curl -s -o home.html -w "home HTTP: %{http_code}\n" "$SITE/"
+          echo -n "references: "; grep -oE '(app\.js|styles\.css|config\.js)\?v=[0-9]+' home.html | sort -u | tr '\n' ' '; echo
+          echo "== app.js variants on the host =="
+          for v in 3 4; do
+            code=$(curl -s -o a.js -w "%{http_code}" "$SITE/app.js?v=$v")
+            has=$(grep -c clogo a.js 2>/dev/null || echo 0)
+            echo "app.js?v=$v -> HTTP $code, 'clogo' occurrences: $has"
+          done
+          echo "== live API popular list (what feeds the logos) =="
+          curl -s -o api.json -w "api HTTP: %{http_code}\n" "$API/api/public/landing"
+          echo -n "popular tickers: "; jq -r '.popular[]?.ticker' api.json 2>/dev/null | tr '\n' ' '; echo
+          echo "== parqet logo CDN reachability for sample tickers =="
+          for t in AAPL MSFT HD NVDA GOOGL META; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://assets.parqet.com/logos/symbol/$t?format=png")
+            echo "parqet $t -> HTTP $code"
+          done
