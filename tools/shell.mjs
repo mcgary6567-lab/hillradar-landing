@@ -45,8 +45,8 @@ export const footer = () => `<div class="cookie" id="cookie" hidden><span>We use
   </div>
 </footer>
 ${ICONS}
-<script src="/config.js?v=4"></script>
-<script src="/app.js?v=4" defer></script>`;
+<script src="/config.js?v=5"></script>
+<script src="/app.js?v=5" defer></script>`;
 
 export const head = ({ title, desc, url, image, ld, type = "article" }) => `<!doctype html>
 <html lang="en">
@@ -77,7 +77,7 @@ export const head = ({ title, desc, url, image, ld, type = "article" }) => `<!do
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=4">
+<link rel="stylesheet" href="/styles.css?v=5">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 </head>
 <body>`;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://hillradar.com/</loc><lastmod>2026-10-20</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://hillradar.com/blog/</loc><lastmod>2026-10-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hillradar.com/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://hillradar.com/blog/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://hillradar.com/blog/what-is-the-stock-act/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/what-is-the-stock-act.jpg</image:loc><image:title>The STOCK Act, explained: what members of Congress must disclose, and when</image:title></image:image></url>
   <url><loc>https://hillradar.com/blog/how-to-read-a-periodic-transaction-report/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/how-to-read-a-periodic-transaction-report.jpg</image:loc><image:title>How to read a congressional Periodic Transaction Report (PTR), field by field</image:title></image:image></url>
   <url><loc>https://hillradar.com/blog/congress-stock-trades-by-the-numbers/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/congress-stock-trades-by-the-numbers.jpg</image:loc><image:title>Congress stock trades by the numbers: 57,262 filings from 2014 to 2026</image:title></image:image></url>
@@ -13,26 +13,26 @@
   <url><loc>https://hillradar.com/blog/what-is-a-congressional-trading-cluster/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/what-is-a-congressional-trading-cluster.jpg</image:loc><image:title>What is a congressional trading cluster, and how AI Scanning finds one</image:title></image:image></url>
   <url><loc>https://hillradar.com/blog/house-vs-senate-stock-trade-disclosures/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/house-vs-senate-stock-trade-disclosures.jpg</image:loc><image:title>House vs Senate: how congressional stock trade disclosures differ</image:title></image:image></url>
   <url><loc>https://hillradar.com/blog/how-the-stock-act-affects-investors/</loc><lastmod>2026-10-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://hillradar.com/assets/blog/how-the-stock-act-affects-investors.jpg</image:loc><image:title>What the STOCK Act means for everyday investors</image:title></image:image></url>
-  <url><loc>https://hillradar.com/congress/</loc><lastmod>2026-10-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hillradar.com/congress/thomas-macarthur/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/josh-gottheimer/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/gilbert-ray-cisneros-jr/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/david-perdue/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/lisa-c-mcclain/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/daniel-s-goldman/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/lois-frankel/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/alan-s-lowenthal/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/tommy-tuberville/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/thomas-r-carper/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/susie-lee/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/k-michael-conaway/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/greg-gianforte/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/donald-s-beyer-jr/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/congress/dean-phillips/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hillradar.com/press/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://hillradar.com/faq/</loc><lastmod>2026-10-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hillradar.com/contact/</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://hillradar.com/disclaimer/</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://hillradar.com/terms/</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://hillradar.com/privacy/</loc><lastmod>2026-10-20</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://hillradar.com/congress/</loc><lastmod>2026-10-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hillradar.com/congress/thomas-macarthur/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/josh-gottheimer/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/gilbert-ray-cisneros-jr/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/david-perdue/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/lisa-c-mcclain/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/daniel-s-goldman/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/lois-frankel/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/alan-s-lowenthal/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/tommy-tuberville/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/thomas-r-carper/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/susie-lee/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/k-michael-conaway/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/greg-gianforte/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/donald-s-beyer-jr/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/congress/dean-phillips/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hillradar.com/press/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://hillradar.com/faq/</loc><lastmod>2026-10-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hillradar.com/contact/</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://hillradar.com/disclaimer/</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://hillradar.com/terms/</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://hillradar.com/privacy/</loc><lastmod>2026-10-21</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

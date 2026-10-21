@@ -1,9 +1,0 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/styles.css?v=4"></head>
-<body style="background:#0a0f1c;padding:30px">
-<div class="card" style="max-width:520px"><h3 class="ch">Companies traded by the most lawmakers</h3>
-<ul class="list" id="popular"></ul></div>
-<script>
-var GREEN="data:image/svg+xml;base64,"+btoa('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" rx="6" fill="#1a7f4b"/><text x="20" y="27" font-size="20" fill="#fff" text-anchor="middle" font-family="Arial">M</text></svg>');
-var rows=[{ticker:"MSFT",name:"Microsoft Corporation",pols:11,logo:GREEN},{ticker:"AAPL",name:"Apple Inc.",pols:10,logo:"https://blocked.invalid/x.png"},{ticker:"HD",name:"The Home Depot, Inc.",pols:6,logo:GREEN}];
-document.getElementById("popular").innerHTML=rows.map(function(i){var logo='<img class="clogo" src="'+i.logo+'" alt="" width="22" height="22" onerror="this.remove()">';return '<li><span>'+logo+'<span class="tk">'+i.ticker+'</span> '+i.name+'</span><span>'+i.pols+' lawmakers</span></li>';}).join("");
-</script></body></html>
