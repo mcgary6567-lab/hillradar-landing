@@ -263,3 +263,17 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 
 /* company logos in the "most traded" list */
 .list .clogo { width: 22px; height: 22px; border-radius: 5px; object-fit: contain; vertical-align: middle; margin-right: 8px; background: #fff; padding: 2px; box-sizing: border-box; box-shadow: 0 0 0 1px var(--line); }
+
+/* featured insights (homepage) */
+.insights .ihead { display: flex; align-items: center; gap: 18px; margin-bottom: 4px; }
+.insights .ihead h2 { margin: 0; font-size: .92rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); white-space: nowrap; }
+.insights .ihead span { flex: 1; height: 1px; background: var(--line); }
+.igrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 22px; }
+.icard { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--ink); transition: .15s; }
+.icard:hover { border-color: rgba(231, 178, 60, .5); transform: translateY(-3px); }
+.icard img { width: 100%; aspect-ratio: 1200/630; object-fit: cover; display: block; }
+.icard .ib { padding: 13px 15px 15px; display: flex; flex-direction: column; gap: 7px; }
+.icard .ic { font-size: .68rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--gold); }
+.icard h3 { margin: 0; font-size: .98rem; line-height: 1.32; }
+@media (max-width: 900px) { .igrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .igrid { grid-template-columns: 1fr; } }
