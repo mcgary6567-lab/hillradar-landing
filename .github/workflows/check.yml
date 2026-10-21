@@ -1,6 +1,8 @@
 name: Diagnose live site
 on:
   workflow_dispatch: {}
+  push:
+    paths: ['.github/workflows/check.yml']
 jobs:
   diag:
     runs-on: ubuntu-latest
