@@ -1,0 +1,19 @@
+name: Diagnose quotes
+on:
+  workflow_dispatch: {}
+  push:
+    paths: ['.github/workflows/check-quotes.yml']
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe keyless price sources
+        run: |
+          for t in TSLA NVDA FDX META AMZN AAPL; do
+            url="https://query1.finance.yahoo.com/v8/finance/chart/$t?range=3mo&interval=1d"
+            code=$(curl -s -o /tmp/q.json -w "%{http_code}" -A "Mozilla/5.0" "$url")
+            px=$(jq -r '.chart.result[0].meta.regularMarketPrice // "na"' /tmp/q.json 2>/dev/null)
+            n=$(jq -r '[.chart.result[0].indicators.quote[0].close[]? | select(.!=null)] | length' /tmp/q.json 2>/dev/null)
+            first=$(jq -r '[.chart.result[0].indicators.quote[0].close[]? | select(.!=null)][0] // "na"' /tmp/q.json 2>/dev/null)
+            echo "$t -> HTTP $code price=$px closes=$n first=$first"
+          done
