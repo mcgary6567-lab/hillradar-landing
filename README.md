@@ -49,6 +49,10 @@ Articles live in `tools/articles.mjs` (numbers from `tools/data.json`). Build wi
 (writes `/blog/`, `/congress/` URLs into `sitemap.xml`, and the blog + lawmaker sections of `llms.txt`) and `node tools/render-heroes.mjs` for the hero images.
 `.htaccess` gives clean URLs and 301s from the old `.html` paths on Apache hosts such as Hostinger.
 
+The homepage **Featured insights** cards use clean, text-free thumbnails in `assets/insights/` (so the
+title only appears once, below the image). Regenerate them with `node tools/render-insights.mjs`; to
+feature different posts, edit the card list in both `index.html` and `tools/render-insights.mjs`.
+
 ## Social card (Open Graph / Twitter)
 `assets/og-image.jpg` (and the `.png` copy the exported FAQ / legal pages use) is the 1200x630 preview shown when any page
 is shared on X, Facebook, LinkedIn, WhatsApp, Telegram or Slack. Rebuild it after `tools/data.json` changes with
