@@ -277,3 +277,9 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 .icard h3 { margin: 0; font-size: .98rem; line-height: 1.32; }
 @media (max-width: 900px) { .igrid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .igrid { grid-template-columns: 1fr; } }
+
+/* politician avatars in the "most active lawmakers" list */
+.list .pavatar { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; vertical-align: middle; margin-right: 9px; background: #1b2744; box-shadow: 0 0 0 2px var(--line); }
+.list .pavatar.r { box-shadow: 0 0 0 2px var(--rep); }
+.list .pavatar.d { box-shadow: 0 0 0 2px var(--dem); }
+.list .pavatar.i { box-shadow: 0 0 0 2px var(--ind); }
