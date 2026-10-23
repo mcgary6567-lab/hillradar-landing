@@ -73,10 +73,17 @@
     }).join("");
   }
 
+  // onerror helper (runs in global scope): swap a failed avatar for the party dot
+  window.hrDot = function (img, cls) { var s = document.createElement("span"); s.className = "dot " + cls; img.replaceWith(s); };
+
   function renderActive(rows) {
     var ul = $("#active"); if (!ul || !rows || !rows.length) return;
     ul.innerHTML = rows.map(function (p) {
-      return '<li><span><span class="dot ' + party(p.party) + '"></span>' + esc(p.name) +
+      var cls = party(p.party);
+      var av = p.ext_id
+        ? '<img class="pavatar ' + cls + '" src="' + API_BASE + '/api/photo/' + encodeURIComponent(p.ext_id) + '" alt="" width="26" height="26" loading="lazy" onerror="window.hrDot(this,\'' + cls + '\')">'
+        : '<span class="dot ' + cls + '"></span>';
+      return '<li><span>' + av + esc(p.name) +
         ' <small>' + esc(p.chamber || "") + (p.state ? " · " + esc(p.state) : "") + '</small></span><span>' + num(p.n) + ' filings</span></li>';
     }).join("");
   }
@@ -84,7 +91,7 @@
   function renderPopular(rows) {
     var ul = $("#popular"); if (!ul || !rows || !rows.length) return;
     ul.innerHTML = rows.map(function (i) {
-      var logo = i.ticker ? '<img class="clogo" src="https://assets.parqet.com/logos/symbol/' + encodeURIComponent(String(i.ticker).toUpperCase()) + '?format=png" alt="" width="22" height="22" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '';
+      var logo = i.ticker ? '<img class="clogo" src="' + API_BASE + '/api/logo/' + encodeURIComponent(String(i.ticker).toUpperCase()) + '" alt="" width="22" height="22" loading="lazy" onerror="this.remove()">' : '';
       return '<li><span>' + logo + '<span class="tk">' + esc(i.ticker) + '</span> ' + esc(i.name) + '</span><span>' + num(i.pols) + ' lawmakers</span></li>';
     }).join("");
   }
