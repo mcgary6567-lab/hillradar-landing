@@ -16,7 +16,7 @@ jobs:
         run: |
           set -e
           mkdir -p assets/insights
-          fetch() { curl -fsSL "$2" -o /tmp/in.png && convert /tmp/in.png -resize 1200x630^ -gravity center -extent 1200x630 -quality 86 "assets/insights/$1.jpg" && identify "assets/insights/$1.jpg"; }
+          fetch() { curl -fsSL "$2" -o /tmp/in.png && ffmpeg -y -loglevel error -i /tmp/in.png -vf "scale=1200:630:force_original_aspect_ratio=increase,crop=1200:630" -q:v 4 "assets/insights/$1.jpg" && ls -l "assets/insights/$1.jpg"; }
           fetch what-is-the-stock-act                       "https://d8j0ntlcm91z4.cloudfront.net/user_3IUJwWfqibR0469Ah4SEqdgyl8a/hf_20261023_080415_abfafb7f-c50a-47dc-a9b0-67d614d1b22e.png"
           fetch congress-stock-trades-by-the-numbers        "https://d8j0ntlcm91z4.cloudfront.net/user_3IUJwWfqibR0469Ah4SEqdgyl8a/hf_20261023_080547_6b9ce60c-d59e-4803-bfcd-020fcd405763.png"
           fetch most-traded-stocks-by-members-of-congress   "https://d8j0ntlcm91z4.cloudfront.net/user_3IUJwWfqibR0469Ah4SEqdgyl8a/hf_20261023_080618_5b77b2e9-ec52-43db-b379-4fe4653bbfda.png"
