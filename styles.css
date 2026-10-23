@@ -283,3 +283,10 @@ h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.01em; margin: 0 0 
 .list .pavatar.r { box-shadow: 0 0 0 2px var(--rep); }
 .list .pavatar.d { box-shadow: 0 0 0 2px var(--dem); }
 .list .pavatar.i { box-shadow: 0 0 0 2px var(--ind); }
+
+/* logos + avatars in the latest-filings rows */
+.row .clogo { width: 18px; height: 18px; border-radius: 4px; object-fit: contain; background: #fff; padding: 1px; box-sizing: border-box; vertical-align: -4px; margin-right: 6px; box-shadow: 0 0 0 1px var(--line); }
+.row .pavatar { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; background: #1b2744; vertical-align: -4px; margin-right: 6px; box-shadow: 0 0 0 2px var(--line); }
+.row .pavatar.r { box-shadow: 0 0 0 2px var(--rep); }
+.row .pavatar.d { box-shadow: 0 0 0 2px var(--dem); }
+.row .pavatar.i { box-shadow: 0 0 0 2px var(--ind); }

@@ -64,10 +64,15 @@
   function renderLatest(rows) {
     var box = $("#latest"); if (!box || !rows || !rows.length) return;
     box.innerHTML = rows.map(function (t) {
+      var cls = party(t.party);
+      var clogo = t.ticker ? '<img class="clogo" src="' + API_BASE + '/api/logo/' + encodeURIComponent(String(t.ticker).toUpperCase()) + '" alt="" width="18" height="18" loading="lazy" onerror="this.remove()">' : '';
+      var av = t.ext_id
+        ? '<img class="pavatar ' + cls + '" src="' + API_BASE + '/api/photo/' + encodeURIComponent(t.ext_id) + '" alt="" width="18" height="18" loading="lazy" onerror="window.hrDot(this,\'' + cls + '\')">'
+        : '<span class="dot ' + cls + '"></span>';
       return '<div class="row">' +
         '<span class="pill ' + esc(t.tx_type) + '">' + esc(String(t.tx_type).toUpperCase()) + '</span>' +
-        '<div class="who"><b><span class="tk">' + esc(t.ticker) + '</span> · ' + esc(t.issuer) + '</b>' +
-        '<small><span class="dot ' + party(t.party) + '"></span>' + esc(t.politician) + (t.chamber ? ' · ' + esc(t.chamber) : '') + (t.state ? ' · ' + esc(t.state) : '') + '</small></div>' +
+        '<div class="who"><b>' + clogo + '<span class="tk">' + esc(t.ticker) + '</span> · ' + esc(t.issuer) + '</b>' +
+        '<small>' + av + esc(t.politician) + (t.chamber ? ' · ' + esc(t.chamber) : '') + (t.state ? ' · ' + esc(t.state) : '') + '</small></div>' +
         '<div class="amt">' + money(t.amount_min, t.amount_max) + '<small>filed ' + esc(ago(t.published_date)) + '</small></div>' +
         '</div>';
     }).join("");
