@@ -73,7 +73,7 @@ function card(a) {
     { "@type": "Blog", "@id": `${url}#blog`, url, name: `${BRAND} Blog`, publisher: { "@id": `${SITE}/#org` }, blogPost: sorted.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/blog/${a.slug}/`, datePublished: a.date, image: `${SITE}/assets/blog/${a.slug}.jpg` })) },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE + "/" }, { "@type": "ListItem", position: 2, name: "Blog", item: url }] },
   ] };
-  const html = `${head({ title: `Congress Stock Trading Blog: Guides & Data | ${BRAND}`, desc: "Guides and data stories on STOCK Act disclosures: how to read filings, who trades most, which stocks Congress holds, late filings and alerts.", url, image: `${SITE}/assets/og-image.jpg`, ld, type: "website" })}
+  const html = `${head({ title: `Congress Stock Trades Blog — Guides & Data | ${BRAND}`, desc: "Guides and data stories on STOCK Act disclosures: how to read filings, who trades most, which stocks Congress holds, late filings and alerts.", url, image: `${SITE}/assets/og-image.jpg`, ld, type: "website" })}
 ${header("blog")}
 <main class="wrap">
   <section class="bhero">
