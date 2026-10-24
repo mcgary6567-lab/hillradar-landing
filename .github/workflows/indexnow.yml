@@ -1,0 +1,35 @@
+name: IndexNow ping
+# Notifies IndexNow (Bing, Yandex, Seznam, Naver, …) to crawl the site's URLs,
+# so new/updated pages get indexed fast. Key file: /64581947aaa5a24e2a893146b50d825c.txt
+on:
+  push:
+    branches: [main]
+    paths: ['**/index.html', '*.html', 'sitemap.xml']
+  workflow_dispatch: {}
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -e
+          HOST="hillradar.com"
+          KEY="64581947aaa5a24e2a893146b50d825c"
+          # Extract all <loc> URLs from the sitemap as a JSON array
+          urls=$(grep -oE '<loc>[^<]+</loc>' sitemap.xml | sed -E 's#</?loc>##g' | jq -R . | jq -s .)
+          n=$(echo "$urls" | jq 'length')
+          echo "Submitting $n URLs to IndexNow"
+          body=$(jq -n --arg host "$HOST" --arg key "$KEY" \
+            --arg kl "https://$HOST/$KEY.txt" --argjson urls "$urls" \
+            '{host:$host, key:$key, keyLocation:$kl, urlList:$urls}')
+          code=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" --data "$body")
+          echo "IndexNow HTTP $code"; cat /tmp/resp.txt || true
+          # 200 or 202 = accepted; 422 = key/url mismatch; fail only on 4xx/5xx other than 429
+          case "$code" in
+            200|202) echo "OK — URLs submitted";;
+            429) echo "::warning::rate limited, will retry next push";;
+            403|422) echo "::warning::key not verified yet (HTTP $code) — deploy the site so /$KEY.txt is live, then re-run";;
+            *) echo "::error::IndexNow rejected (HTTP $code)"; exit 1;;
+          esac

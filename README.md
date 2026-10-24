@@ -60,3 +60,11 @@ is shared on X, Facebook, LinkedIn, WhatsApp, Telegram or Slack. Rebuild it afte
 `og:description` and `twitter:*` tags are in `index.html`. After changing the image bump `?v=` on the `og:image` URLs
 and re-scrape at https://developers.facebook.com/tools/debug/ and https://www.linkedin.com/post-inspector/ so the old
 preview is dropped from their caches.
+
+## IndexNow (fast indexing)
+`64581947aaa5a24e2a893146b50d825c.txt` at the site root is the IndexNow key; keep it deployed.
+`.github/workflows/indexnow.yml` submits every `sitemap.xml` URL to IndexNow (Bing, Yandex, Seznam,
+Naver) on each content push to `main`, and can be run manually (Actions → IndexNow ping → Run workflow),
+so new/updated pages get crawled fast. The key must be live at `https://hillradar.com/<key>.txt` for
+submissions to verify — deploy the site first, then the pings succeed. (Google doesn't use IndexNow; submit
+`sitemap.xml` in Google Search Console for Google.)
