@@ -3,7 +3,7 @@ Builds a lead list of small US investment advisers (RIAs) from the SEC's free, p
   python3 tools/leads/sec_ria_leads.py [out.csv]
 Source: SEC "Information About Registered Investment Advisers" monthly file
 (https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers).
-Keeps SEC-registered, US-based firms with 1-10 employees and $10M-$100M regulatory AUM, sorted by AUM.
+Keeps SEC-registered, US-based firms with 1-MAX_EMP employees and MIN_AUM-MAX_AUM regulatory AUM (env vars; default 1-10, $10M-$100M), sorted by AUM.
 Public data only: firm name, office address, phone, website, employees, AUM, CRD (link to adviserinfo.sec.gov).
 """
 import csv, io, re, sys, urllib.request, zipfile
@@ -14,7 +14,10 @@ PAGES = [
     "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
     "https://www.sec.gov/help/foiadocsinvafoiahtm.html",
 ]
-MAX_EMP, MIN_AUM, MAX_AUM = 10, 10_000_000, 100_000_000
+import os
+MAX_EMP = int(os.environ.get("MAX_EMP", 10))
+MIN_AUM = int(os.environ.get("MIN_AUM", 10_000_000))
+MAX_AUM = int(os.environ.get("MAX_AUM", 100_000_000))
 
 
 def get(url):

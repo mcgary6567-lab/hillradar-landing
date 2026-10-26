@@ -1,6 +1,7 @@
 name: SEC RIA lead list
-# Builds a CSV of small US investment advisers from the SEC's free public Form ADV data.
-# Output is a workflow artifact (Actions -> this run -> Artifacts); nothing is committed or deployed.
+# Builds a CSV of small US investment advisers from the SEC's free public Form ADV data, then crawls each
+# firm's own website for publicly listed contact emails. Output is a short-lived workflow artifact
+# (Actions -> this run -> Artifacts); nothing is committed or deployed. Logs print counts only.
 on:
   push:
     branches: [sec-ria-leads]
@@ -9,15 +10,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      MIN_AUM: '1'
+      MAX_AUM: '500000000'
+      MAX_EMP: '10'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: pip install openpyxl
-      - name: Build lead list
+      - run: pip install openpyxl aiohttp
+      - name: Build firm list from SEC data
         run: python3 tools/leads/sec_ria_leads.py sec_ria_leads.csv
+      - name: Crawl firm websites for contact emails
+        run: python3 tools/leads/crawl_emails.py sec_ria_leads.csv sec_ria_leads_with_emails.csv
       - uses: actions/upload-artifact@v4
         with:
           name: sec-ria-leads
-          path: sec_ria_leads.csv
-          retention-days: 30
+          path: sec_ria_leads_with_emails.csv
+          retention-days: 7
