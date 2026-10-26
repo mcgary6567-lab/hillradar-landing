@@ -3,7 +3,7 @@ Builds a lead list of small US investment advisers (RIAs) from the SEC's free, p
   python3 tools/leads/sec_ria_leads.py [out.csv]
 Source: SEC "Information About Registered Investment Advisers" monthly file
 (https://www.sec.gov/data-research/sec-markets-data/information-about-registered-investment-advisers-exempt-reporting-advisers).
-Keeps SEC-registered, US-based firms with 1-10 employees and up to $500M regulatory AUM, sorted by AUM.
+Keeps SEC-registered, US-based firms with 1-10 employees and $10M-$100M regulatory AUM, sorted by AUM.
 Public data only: firm name, office address, phone, website, employees, AUM, CRD (link to adviserinfo.sec.gov).
 """
 import csv, io, re, sys, urllib.request, zipfile
@@ -14,7 +14,7 @@ PAGES = [
     "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
     "https://www.sec.gov/help/foiadocsinvafoiahtm.html",
 ]
-MAX_EMP, MAX_AUM = 10, 500_000_000
+MAX_EMP, MIN_AUM, MAX_AUM = 10, 10_000_000, 100_000_000
 
 
 def get(url):
@@ -106,7 +106,9 @@ def main():
         if c["status"] and g(r, "status") and not re.match(r"approved", g(r, "status"), re.I):
             continue
         emp, aum = num(g(r, "emp")), num(g(r, "aum"))
-        if emp is None or not (1 <= emp <= MAX_EMP) or aum is None or aum <= 0 or aum > MAX_AUM:
+        if emp is None or not (1 <= emp <= MAX_EMP) or aum is None or aum < MIN_AUM or aum > MAX_AUM:
+            continue
+        if not g(r, "state"):  # no US state = foreign office with a blank country field
             continue
         web = g(r, "web")
         if web and not web.lower().startswith("http"):
@@ -123,7 +125,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(keep[0].keys()) if keep else ["firm"])
         w.writeheader(); w.writerows(keep)
     with_web = sum(1 for k in keep if k["website"])
-    print(f"\nKEPT {len(keep)} small US RIAs (1-{MAX_EMP} employees, AUM <= ${MAX_AUM:,}); {with_web} with a website -> {out}")
+    print(f"\nKEPT {len(keep)} small US RIAs (1-{MAX_EMP} employees, AUM ${MIN_AUM:,}-${MAX_AUM:,}); {with_web} with a website -> {out}")
     for k in keep[:10]:
         print(f"  {k['firm'][:40]:40} {k['city']}, {k['state']}  emp={k['employees']}  aum=${k['aum_usd']:,}  {k['website']}")
 
